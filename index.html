@@ -1,28 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ========== BASIC META TAGS ========== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="iMENA Learn - World-Class Digital Skills Training for Future Teachers. Join the intensive 4-week weekend program.">
-    <meta name="keywords" content="iMENA, Learn, Digital Skills, Teachers, Rwanda, TTC Muhanga, AI, Canva, Google Classroom">
-    <meta name="author" content="TUYISENGE Jean Chrisostom">
-    <title>iMENA Learn</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- Tailwind CSS -->
+    <!-- ========== SEO TITLE & DESCRIPTION ========== -->
+    <title>iMENA Learn</title>
+    <meta name="description" content="iMENA Learn offers world-class digital skills training for future teachers in Rwanda. Master AI, Canva, Google Classroom, and modern teaching tools in our intensive 4-week weekend program at TTC Muhanga. Join 250+ enrolled students!">
+    <meta name="keywords" content="iMENA, iMENA Learn, digital skills, teacher training, Rwanda, TTC Muhanga, AI for teachers, Canva for education, Google Classroom, future teachers, EdTech Rwanda, teaching skills, ICT for teachers">
+    <meta name="author" content="TUYISENGE Jean Chrisostom">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- ========== CANONICAL URL ========== -->
+    <link rel="canonical" href="https://imenalearn.vercel.app/">
+    
+    <!-- ========== FAVICONS (Complete Set) ========== -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#3B82F6">
+    <meta name="theme-color" content="#05050A">
+    
+    <!-- ========== OPEN GRAPH (Facebook, LinkedIn, etc.) ========== -->
+    <meta property="og:title" content="iMENA Learn | Digital Skills for Future Teachers">
+    <meta property="og:description" content="Join our intensive 4-week weekend program to master AI, Canva, Google Classroom, and modern teaching tools. Limited seats available at TTC Muhanga!">
+    <meta property="og:url" content="https://imenalearn.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://imenalearn.vercel.app/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="iMENA Learn Logo">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="iMENA Learn">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- ========== TWITTER CARD (Twitter/X) ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="iMENA Learn | Digital Skills for Future Teachers">
+    <meta name="twitter:description" content="Master AI, Canva, and Google Classroom in our 4-week weekend program. Enroll now at TTC Muhanga!">
+    <meta name="twitter:image" content="https://imenalearn.vercel.app/android-chrome-512x512.png">
+    <meta name="twitter:image:alt" content="iMENA Learn Logo">
+    
+    <!-- ========== GEO & VERIFICATION ========== -->
+    <meta name="geo.region" content="RW">
+    <meta name="geo.placename" content="Muhanga">
+    <meta name="geo.position" content="-2.0833;29.75">
+    <meta name="ICBM" content="-2.0833, 29.75">
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
+    
+    <!-- ========== Tailwind CSS ========== -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fonts -->
+    <!-- ========== Google Fonts ========== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
+    <!-- ========== Font Awesome Icons ========== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- GSAP & Plugins -->
+    <!-- ========== GSAP & Plugins ========== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
-    <!-- Three.js -->
+    <!-- ========== Three.js ========== -->
     <script type="importmap">
         {
             "imports": {
@@ -32,11 +80,51 @@
         }
     </script>
     
-    <!-- Canvas Confetti -->
+    <!-- ========== Canvas Confetti ========== -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/rmqp5jT3/IMENA-LOGO.png">
+    <!-- ========== STRUCTURED DATA (JSON-LD for SEO) ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "iMENA Learn",
+        "alternateName": "iMENA Learn Digital Skills Training",
+        "url": "https://imenalearn.vercel.app/",
+        "logo": "https://imenalearn.vercel.app/android-chrome-512x512.png",
+        "description": "World-class digital skills training program for future teachers in Rwanda. 4-week intensive weekend program covering AI, Canva, Google Classroom, and modern teaching tools.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Muhanga",
+            "addressCountry": "RW"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+250796717230",
+            "contactType": "customer service",
+            "contactOption": "WhatsApp"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "TUYISENGE Jean Chrisostom"
+        },
+        "offers": {
+            "@type": "Offer",
+            "description": "4-Week Digital Skills Training Program",
+            "availability": "https://schema.org/LimitedAvailability"
+        },
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "name": "Digital Skills for Future Teachers",
+            "courseMode": "weekend",
+            "duration": "P4W",
+            "instructor": {
+                "@type": "Person",
+                "name": "TUYISENGE Jean Chrisostom"
+            }
+        }
+    }
+    </script>
     
     <style>
         :root {
@@ -164,7 +252,6 @@
         ::-webkit-scrollbar-track { background: #0A0A14; }
         ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: 10px; }
         
-        /* Logo styling */
         .logo-container {
             transition: transform 0.3s ease;
         }
