@@ -1,0 +1,15 @@
+# robots.txt for iMENA Learn
+# https://imenalearn.vercel.app/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://imenalearn.vercel.app/sitemap.xml
+
+# Crawl delay (be polite to the server)
+Crawl-delay: 1
+
+# Disallow admin or private areas (add if you have any)
+# Disallow: /admin/
+# Disallow: /private/
