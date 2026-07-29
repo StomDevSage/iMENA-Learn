@@ -77,12 +77,6 @@
             border: 1px solid rgba(239, 68, 68, 0.3);
         }
 
-        .status-loading {
-            background: rgba(245, 158, 11, 0.15);
-            color: #F59E0B;
-            border: 1px solid rgba(245, 158, 11, 0.3);
-        }
-
         .badge {
             display: inline-block;
             padding: 4px 20px;
@@ -208,18 +202,8 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .loading-spinner {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            border: 3px solid rgba(255,255,255,0.1);
-            border-radius: 50%;
-            border-top-color: #3B82F6;
-            animation: spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .hidden {
+            display: none !important;
         }
 
         .error-message {
@@ -242,10 +226,6 @@
         .contact-info a:hover {
             text-decoration: underline;
         }
-
-        .hidden {
-            display: none !important;
-        }
     </style>
 </head>
 <body>
@@ -255,13 +235,13 @@
         <img src="https://i.postimg.cc/rmqp5jT3/IMENA-LOGO.png" alt="iMENA Learn" class="logo">
 
         <div id="statusSection">
-            <div class="status-icon status-loading" id="statusIcon">
-                <span class="loading-spinner"></span>
+            <div class="status-icon status-valid" id="statusIcon">
+                <i class="fas fa-check-circle"></i>
             </div>
-            <div class="badge" id="statusBadge">VERIFYING</div>
+            <div class="badge badge-valid" id="statusBadge">VALID</div>
         </div>
 
-        <div id="certDetails" class="hidden">
+        <div id="certDetails">
             <div class="cert-title">Certificate Verified</div>
             <div class="cert-subtitle">This certificate is valid and issued by iMENA Learn</div>
 
@@ -322,16 +302,6 @@
             </div>
         </div>
 
-        <div id="errorSection" class="hidden">
-            <div class="status-icon status-invalid" id="errorIcon">
-                <i class="fas fa-exclamation-triangle"></i>
-            </div>
-            <div class="badge badge-invalid">ERROR</div>
-            <div class="cert-title" style="color: #EF4444;">Verification Failed</div>
-            <div class="cert-subtitle">Unable to verify this certificate at this time.</div>
-            <div class="error-message" id="errorMessage">Please try again later.</div>
-        </div>
-
         <div class="footer-tagline">
             <span>Learn Today. Teach Tomorrow. Lead Tomorrow.</span>
         </div>
@@ -341,89 +311,125 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script>
-        // === LOAD CERTIFICATES FROM JSON FILE ===
-        async function loadCertificates() {
-            try {
-                const response = await fetch('certificates.json');
-                if (!response.ok) {
-                    throw new Error('Could not load certificate data');
-                }
-                const data = await response.json();
-                return data.certificates || [];
-            } catch (error) {
-                console.error('Error loading certificates:', error);
-                return null;
-            }
-        }
+        // ============================================================
+        // ALL CERTIFICATE DATA IS HERE - NO EXTERNAL FILE NEEDED
+        // ============================================================
+        const certificates = [
+            {"id": "IML-2026-0001", "name": "IKUZWE Pacifique", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0002", "name": "Lovemore Marara", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0003", "name": "Kirezi mutabazi jehovanis", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0004", "name": "Nshimiyimana mechaques", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0005", "name": "IRADUKUNDA Slyivine", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0006", "name": "NIYITEGEKA JEAN DE DIEU", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0007", "name": "IRYIVUZE AZARIAS", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0008", "name": "Ndayisimiye daniel", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0009", "name": "Chance uwamahoro", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0010", "name": "ICYIZERE Aime Fabrice", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0011", "name": "Ntirenganya Olivier", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0012", "name": "Ally Marc Nuru", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0013", "name": "Izerimana Geoffrey", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0014", "name": "MUGISHA Pacifique", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0015", "name": "Niwebasa Belise", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0016", "name": "Elvis", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0017", "name": "Byiringiro merci", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0018", "name": "GISUBIZO LEVISH", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0019", "name": "IRADUKUNDA Vestine", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0020", "name": "Ngabonziza Pacifique", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0021", "name": "Yubahwe Jules", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0022", "name": "ABARIKUMWE Ernest", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0023", "name": "Elimogene Himbazayehova", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0024", "name": "Himbazayehova eliminogene", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0025", "name": "IRADUKUNDA Martin", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0026", "name": "Byiringiro Samuel", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0027", "name": "Niyokwizerwa jean Claude", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0028", "name": "Manzi Type Herve", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0029", "name": "Habumuremyi Aristide", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0030", "name": "NTAKIRUTIMANA Goodman", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0031", "name": "ihirwe esther", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0032", "name": "NIYBIGIRA Theoneste", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0033", "name": "Uwurukundo Jean Yves", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0034", "name": "Furaha Marie Ernestine", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0035", "name": "Niyogisubizo Fabien jean damascene", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0036", "name": "Hagenimana Leonce", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0037", "name": "Nizeyimana emille", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0038", "name": "Irasubiza nishimwe claudine", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0039", "name": "Irabizi shukuran", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0040", "name": "MBABAZI Gad", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0041", "name": "Irasubiza Gihozo Sandra", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0042", "name": "niyitugize charte", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0043", "name": "INEZA Crédule", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"},
+            {"id": "IML-2026-0044", "name": "UMUVUGIZI EMELLY", "program": "iMENA Learn - Digital Skills for Future Teachers", "date": "2026-07-29", "status": "VALID"}
+        ];
 
-        // === GET CERTIFICATE ID FROM URL ===
+        // ============================================================
+        // GET CERTIFICATE ID FROM URL - FIXED
+        // ============================================================
         function getCertId() {
-            const path = window.location.pathname;
-            const parts = path.split('/');
-            const lastPart = parts[parts.length - 1];
-            return lastPart || '';
+            // Method 1: Check URL parameters (?id=...)
+            const urlParams = new URLSearchParams(window.location.search);
+            const idParam = urlParams.get('id');
+            if (idParam) {
+                return idParam;
+            }
+
+            // Method 2: Check path segments (/verify/IML-2026-XXXX)
+            const pathParts = window.location.pathname.split('/');
+            for (let part of pathParts) {
+                if (part.trim().toUpperCase().startsWith('IML-2026-')) {
+                    return part.trim();
+                }
+            }
+
+            // Method 3: Check full URL for IML-2026-
+            const fullUrl = window.location.href;
+            const match = fullUrl.match(/IML-2026-\d{4}/);
+            if (match) {
+                return match[0];
+            }
+
+            return '';
         }
 
-        // === VERIFY CERTIFICATE ===
-        async function verifyCertificate() {
+        // ============================================================
+        // VERIFY CERTIFICATE
+        // ============================================================
+        function verifyCertificate() {
             const certId = getCertId();
 
             if (!certId) {
-                showError('No certificate ID provided.');
-                return;
-            }
-
-            const certificates = await loadCertificates();
-
-            if (!certificates) {
-                showError('Unable to load certificate database. Please try again later.');
+                // Show error but keep it user-friendly
+                document.getElementById('statusSection').classList.add('hidden');
+                document.getElementById('certDetails').classList.add('hidden');
+                document.getElementById('notFoundSection').classList.remove('hidden');
+                document.querySelector('#notFoundSection .cert-title').textContent = 'No ID Provided';
+                document.querySelector('#notFoundSection .cert-subtitle').textContent = 'Please use ?id=IML-2026-XXXX in the URL.';
                 return;
             }
 
             const result = certificates.find(c => c.id.trim().toUpperCase() === certId.trim().toUpperCase());
 
             if (result) {
-                showValidCertificate(result);
+                document.getElementById('learnerName').textContent = result.name;
+                document.getElementById('programName').textContent = result.program;
+                document.getElementById('certId').textContent = result.id;
+                document.getElementById('issueDate').textContent = result.date || 'Not specified';
+                document.getElementById('statusValue').textContent = result.status || 'VALID';
+
+                document.getElementById('statusSection').classList.remove('hidden');
+                document.getElementById('certDetails').classList.remove('hidden');
+                document.getElementById('notFoundSection').classList.add('hidden');
             } else {
-                showNotFound();
+                document.getElementById('statusSection').classList.add('hidden');
+                document.getElementById('certDetails').classList.add('hidden');
+                document.getElementById('notFoundSection').classList.remove('hidden');
+                document.querySelector('#notFoundSection .cert-title').textContent = 'Certificate Not Found';
+                document.querySelector('#notFoundSection .cert-subtitle').textContent = 'This certificate ID is not registered in our system.';
             }
         }
 
-        // === SHOW VALID CERTIFICATE ===
-        function showValidCertificate(data) {
-            document.getElementById('statusSection').classList.add('hidden');
-            document.getElementById('notFoundSection').classList.add('hidden');
-            document.getElementById('errorSection').classList.add('hidden');
-
-            document.getElementById('learnerName').textContent = data.name;
-            document.getElementById('programName').textContent = data.program;
-            document.getElementById('certId').textContent = data.id;
-            document.getElementById('issueDate').textContent = data.date || 'Not specified';
-            document.getElementById('statusValue').textContent = data.status || 'VALID';
-
-            document.getElementById('certDetails').classList.remove('hidden');
-        }
-
-        // === SHOW NOT FOUND ===
-        function showNotFound() {
-            document.getElementById('statusSection').classList.add('hidden');
-            document.getElementById('certDetails').classList.add('hidden');
-            document.getElementById('errorSection').classList.add('hidden');
-
-            document.getElementById('notFoundSection').classList.remove('hidden');
-        }
-
-        // === SHOW ERROR ===
-        function showError(message) {
-            document.getElementById('statusSection').classList.add('hidden');
-            document.getElementById('certDetails').classList.add('hidden');
-            document.getElementById('notFoundSection').classList.add('hidden');
-
-            document.getElementById('errorMessage').textContent = message;
-            document.getElementById('errorSection').classList.remove('hidden');
-        }
-
-        // === RUN VERIFICATION ===
+        // ============================================================
+        // RUN VERIFICATION
+        // ============================================================
         verifyCertificate();
     </script>
 
