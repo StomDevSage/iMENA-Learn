@@ -1,0 +1,25 @@
+{
+  "certificates": [
+    {
+      "id": "IML-2026-0001",
+      "name": "Iradukunda Vestin",
+      "program": "iMENA Learn - Digital Skills for Future Teachers",
+      "date": "2026-07-29",
+      "status": "VALID"
+    },
+    {
+      "id": "IML-2026-0002",
+      "name": "IRADUKUNDA Slyivine",
+      "program": "iMENA Learn - Digital Skills for Future Teachers",
+      "date": "2026-07-29",
+      "status": "VALID"
+    },
+    {
+      "id": "IML-2026-0003",
+      "name": "IRYIVUZE AZARIAS",
+      "program": "iMENA Learn - Digital Skills for Future Teachers",
+      "date": "2026-07-29",
+      "status": "VALID"
+    }
+  ]
+}
