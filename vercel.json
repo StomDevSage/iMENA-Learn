@@ -5,6 +5,10 @@
     {
       "src": "index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "verify/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -19,6 +23,14 @@
     {
       "src": "/sitemap.xml",
       "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/verify",
+      "dest": "/verify/index.html"
+    },
+    {
+      "src": "/verify/(.*)",
+      "dest": "/verify/index.html"
     },
     {
       "src": "/(.*)",
