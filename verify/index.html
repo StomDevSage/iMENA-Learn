@@ -132,7 +132,7 @@
         .container {
             position: relative;
             z-index: 1;
-            max-width: 600px;
+            max-width: 620px;
             width: 100%;
             padding: 10px;
         }
@@ -553,6 +553,76 @@
             display: none !important;
         }
 
+        /* ===== ACTION BUTTONS ===== */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-share {
+            background: linear-gradient(135deg, #3B82F6, #2563EB);
+            color: white;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-share:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== VERIFICATION COUNT ===== */
+        .verification-count {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .verification-count span {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 480px) {
             .certificate-card {
@@ -582,6 +652,8 @@
             .cert-label { font-size: 10px; }
             .cert-content { padding: 12px 14px; }
             .status-icon { width: 44px; height: 44px; font-size: 20px; }
+            .btn-action { font-size: 11px; padding: 8px 14px; }
+            .action-buttons { gap: 6px; }
         }
 
         @media (max-width: 380px) {
@@ -590,6 +662,7 @@
             .cert-row { padding: 4px 0; }
             .celebration-text h1 { font-size: 17px; }
             .cert-value.name { font-size: 13px; }
+            .btn-action { font-size: 10px; padding: 6px 12px; }
         }
     </style>
 </head>
@@ -688,6 +761,11 @@
                     </div>
                 </div>
 
+                <!-- Verification Count -->
+                <div class="verification-count" id="verificationCount">
+                    🔒 Verified <span id="verifyCount">1</span> time
+                </div>
+
                 <!-- Skill Strip -->
                 <div class="skill-strip">
                     <span>AI</span>
@@ -695,6 +773,16 @@
                     <span>Education</span>
                     <span>Innovation</span>
                     <span>Technology</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-action btn-download" onclick="downloadCertificate()">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                    <button class="btn-action btn-whatsapp" onclick="shareOnWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Share
+                    </button>
                 </div>
 
                 <!-- Signature -->
@@ -754,7 +842,7 @@
     <!-- ===== SCRIPTS ===== -->
     <script>
         // ============================================================
-        // CERTIFICATE DATA - UPDATED WITH ALL 50 STUDENTS
+        // CERTIFICATE DATA
         // ============================================================
         var certificates = [
             {id: "IML-2026-0001", name: "IKUZWE Pacifique", program: "iMENA Learn - Digital Skills for Future Teachers", date: "August 2026", status: "VALID"},
@@ -808,6 +896,22 @@
             {id: "IML-2026-0049", name: "GISINGIZO CELINE", program: "iMENA Learn - Digital Skills for Future Teachers", date: "August 2026", status: "VALID"},
             {id: "IML-2026-0050", name: "GISINGIZO CELINE", program: "iMENA Learn - Digital Skills for Future Teachers", date: "August 2026", status: "VALID"}
         ];
+
+        // ============================================================
+        // VERIFICATION COUNTER (Local Storage)
+        // ============================================================
+        function getVerificationCount(certId) {
+            var key = 'verify_' + certId;
+            var count = localStorage.getItem(key);
+            return count ? parseInt(count) : 0;
+        }
+
+        function incrementVerificationCount(certId) {
+            var key = 'verify_' + certId;
+            var count = getVerificationCount(certId) + 1;
+            localStorage.setItem(key, count);
+            return count;
+        }
 
         // ============================================================
         // GET CERTIFICATE ID FROM URL
@@ -902,6 +1006,25 @@
         }
 
         // ============================================================
+        // SHARE FUNCTIONS
+        // ============================================================
+        function shareOnWhatsApp() {
+            var name = document.getElementById('learnerName').textContent;
+            var url = window.location.href;
+            var message = "🎓 I have successfully completed the iMENA Learn program! Verify my certificate here: " + url;
+            var whatsappUrl = "https://wa.me/?text=" + encodeURIComponent(message);
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function downloadCertificate() {
+            var name = document.getElementById('learnerName').textContent;
+            var certId = document.getElementById('certId').textContent;
+            // In a real implementation, this would generate a PDF.
+            // For now, show a message
+            alert('📄 Downloading certificate for ' + name + ' (' + certId + ')\n\nPDF download will be available soon.');
+        }
+
+        // ============================================================
         // VERIFY CERTIFICATE
         // ============================================================
         function verifyCertificate() {
@@ -930,6 +1053,10 @@
                 document.getElementById('certId').textContent = result.id;
                 document.getElementById('issueDate').textContent = result.date || 'Not specified';
                 document.getElementById('statusValue').textContent = result.status || 'VALID';
+
+                // Update verification count
+                var count = incrementVerificationCount(result.id);
+                document.getElementById('verifyCount').textContent = count;
 
                 validView.classList.remove('hidden');
                 notFoundView.classList.add('hidden');
