@@ -391,6 +391,77 @@
             background: rgba(16, 185, 129, 0.05);
         }
 
+        /* ===== LARGE GALLERY IMAGE STYLES ===== */
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            min-height: 350px;
+            max-height: 700px;
+            object-fit: contain;
+            border-radius: 0.75rem;
+            background: rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .gallery-img:hover {
+            transform: scale(1.01);
+        }
+
+        /* Full-width hero image */
+        .gallery-hero-img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            border-radius: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* ===== LIGHTBOX OVERLAY ===== */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.93);
+            backdrop-filter: blur(12px);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            padding: 30px;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-overlay img {
+            max-width: 95%;
+            max-height: 92%;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.3s;
+            z-index: 10000;
+        }
+        .lightbox-close:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
         /* ===== AI ASSISTANT FLOATING CHAT ===== */
         .ai-float-btn {
             position: fixed;
@@ -702,6 +773,21 @@
                 height: 50px;
                 font-size: 22px;
             }
+            .gallery-img {
+                min-height: 200px;
+                max-height: 400px;
+            }
+            .gallery-hero-img {
+                max-height: 300px;
+            }
+            .lightbox-close {
+                top: 15px;
+                right: 20px;
+                font-size: 30px;
+            }
+            .lightbox-overlay {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -798,7 +884,7 @@
                     <span class="text-white">iMENA</span> <span class="gradient-text">Learn</span>
                 </h1>
                 <p class="text-2xl md:text-4xl font-bold text-white mb-4">Digital Skills for <span class="gradient-text">Future Teachers</span></p>
-                <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10">In 4 weekends, turn your phone into your teaching power. No experience needed. We'll teach you everything.</p>
+                <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10">iMENA Learn   is a 4-week practical digital skills program designed to transform beginners into confident technology users through live demonstrations, smartphone-based learning, and guided hands-on practice.  </p>
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="#register" class="btn-premium text-lg"><i class="fas fa-rocket mr-2"></i> Register Now →</a>
                     <a href="#program" class="btn-outline text-lg"><i class="fas fa-play-circle mr-2"></i> Explore Program</a>
@@ -828,7 +914,7 @@
             <div class="container-custom">
                 <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-center">
                     <div>
-                        <div class="stat-number" id="totalStudents">54</div>
+                        <div class="stat-number" id="totalStudents">54+</div>
                         <p class="text-gray-400 text-xs uppercase tracking-wider">Total Students</p>
                     </div>
                     <div>
@@ -836,7 +922,7 @@
                         <p class="text-gray-400 text-xs uppercase tracking-wider">Active Learners</p>
                     </div>
                     <div>
-                        <div class="stat-number-green" id="certifiedStudents">54</div>
+                        <div class="stat-number-green" id="certifiedStudents">21</div>
                         <p class="text-gray-400 text-xs uppercase tracking-wider">Certified</p>
                     </div>
                     <div>
@@ -845,7 +931,7 @@
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></span>
-                        <span class="text-sm text-gray-300">Program Complete ✅</span>
+                        <span class="text-sm text-gray-300">2026 Class Completed ✅</span>
                     </div>
                 </div>
             </div>
@@ -962,7 +1048,7 @@
         </section>
 
         <!-- ============================================ -->
-        <!-- GRADUATES - Honor Roll (UPGRADED)            -->
+        <!-- GRADUATES - Honor Roll                        -->
         <!-- ============================================ -->
         <section id="students" class="py-20">
             <div class="container-custom">
@@ -971,7 +1057,7 @@
                     <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Our 2026 Graduates</h2>
                     <p class="text-gray-300 mt-2 max-w-2xl mx-auto">We are proud to recognize the following educators who have successfully completed the iMENA Learn program and are now equipped to lead Rwanda's digital transformation in education.</p>
                     <div class="inline-block mt-4 px-5 py-2 rounded-full bg-green-500/10 border border-green-500/20">
-                        <span class="text-green-400 text-sm font-bold">🎓 54 Graduates • 100% Certified</span>
+                        <span class="text-green-400 text-sm font-bold">🎓 54 Active learners • 21 Already Certified</span>
                     </div>
                 </div>
 
@@ -985,17 +1071,17 @@
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">L</div>
                         <p class="text-white text-xs font-medium">ISHIMWE Thierry</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">K</div>
                         <p class="text-white text-xs font-medium">Kirezi Mutabazi Jehovanis</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Nshimiyimana Mechaques</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
@@ -1005,7 +1091,7 @@
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Niyitegeka Jean De Dieu</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
@@ -1015,42 +1101,42 @@
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Ndayisimiye Daniel</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">C</div>
                         <p class="text-white text-xs font-medium">Chance Uwamahoro</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
                         <p class="text-white text-xs font-medium">Icyizere Aime Fabrice</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Ntirenganya Olivier</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">A</div>
                         <p class="text-white text-xs font-medium">Ally Marc Nuru</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
                         <p class="text-white text-xs font-medium">Izerimana Geoffrey</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">M</div>
                         <p class="text-white text-xs font-medium">Mugisha Pacifique</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Niwebasa Belise</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
@@ -1060,12 +1146,12 @@
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">B</div>
                         <p class="text-white text-xs font-medium">Byiringiro Merci</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">G</div>
                         <p class="text-white text-xs font-medium">Gisubizo Levish</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
@@ -1075,37 +1161,37 @@
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Ngabonziza Pacifique</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">Y</div>
                         <p class="text-white text-xs font-medium">Yubahwe Jules</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">A</div>
                         <p class="text-white text-xs font-medium">Abarikumwe Ernest</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">E</div>
                         <p class="text-white text-xs font-medium">Elimogene Himbazayehova</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">H</div>
                         <p class="text-white text-xs font-medium">Himbazayehova Elimogene</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
                         <p class="text-white text-xs font-medium">Iradukunda Martin</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">B</div>
                         <p class="text-white text-xs font-medium">Byiringiro Samuel</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
@@ -1115,32 +1201,32 @@
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">M</div>
                         <p class="text-white text-xs font-medium">Manzi Type Herve</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">H</div>
                         <p class="text-white text-xs font-medium">Habumuremyi Aristide</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Ntakirutimana Goodman</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
                         <p class="text-white text-xs font-medium">Ihirwe Esther</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Niyibigira Theoneste</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">U</div>
                         <p class="text-white text-xs font-medium">Uwurukundo Jean Yves</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">F</div>
@@ -1170,37 +1256,37 @@
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
                         <p class="text-white text-xs font-medium">Irabizi Shukuran</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">M</div>
                         <p class="text-white text-xs font-medium">Mbabazi Gad</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
                         <p class="text-white text-xs font-medium">Irasubiza Gihozo Sandra</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
                         <p class="text-white text-xs font-medium">Niyitugize Charte</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
                         <p class="text-white text-xs font-medium">Ineza Crédule</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">U</div>
                         <p class="text-white text-xs font-medium">Umuvugizi Emelly</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
                         <p class="text-white text-xs font-medium">Isimbi Kevine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
+                        <span class="text-[8px] text-green-400">Ongoing</span>
                     </div>
                     <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
@@ -1250,28 +1336,28 @@
                 </div>
 
                 <div class="text-center mt-8">
-                    <p class="text-green-400 text-sm">🎓 All 54 graduates are now certified and ready to lead digital transformation in Rwandan classrooms</p>
+                    <p class="text-green-400 text-sm">🎓 All 21 students are now certified and ready to lead digital transformation in Rwandan classrooms</p>
                     <p class="text-gray-400 text-xs mt-2">iMENA Learn — Building Rwanda's digitally empowered educators</p>
                 </div>
             </div>
         </section>
 
         <!-- ============================================ -->
-        <!-- CERTIFICATES & GALLERY - Professional Showcase -->
+        <!-- CERTIFICATES & GALLERY - LARGE FORMAT        -->
         <!-- ============================================ -->
         <section id="certificates" class="py-20 bg-gradient-to-b from-transparent to-green-500/5">
             <div class="container-custom">
                 <div class="text-center mb-12 reveal">
                     <p class="text-green-400 text-sm font-bold uppercase tracking-wider">✦ Our Standards ✦</p>
                     <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Excellence in Certification</h2>
-                    <p class="text-gray-300 mt-2 max-w-2xl mx-auto">iMENA Learn certificates are awarded to educators who demonstrate mastery in digital pedagogy. Each certificate is verifiable and recognized as a mark of quality in educational technology.</p>
+                    <p class="text-gray-300 mt-2 max-w-2xl mx-auto">iMENA Learn certificate is more than a document—it represents demonstrated digital competence.</p>
                 </div>
 
-                <!-- Certificate Template Showcase -->
+                <!-- Certificate Template Showcase - FULL WIDTH -->
                 <div class="glass-premium p-6 md:p-10 rounded-2xl mb-12 reveal">
                     <div class="flex flex-col md:flex-row items-center gap-8">
                         <div class="flex-1">
-                            <span class="inline-block px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-xs font-bold tracking-wider mb-3">OFFICIAL TEMPLATE</span>
+                            <span class="inline-block px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-xs font-bold tracking-wider mb-3">iMENA Learn Official Certificate</span>
                             <h3 class="text-2xl md:text-3xl font-bold text-white">iMENA Learn Certificate of Completion</h3>
                             <p class="text-gray-300 mt-3 leading-relaxed">Our certificates are designed to reflect the high standards of the iMENA ecosystem. Each certificate features a <strong class="text-white">unique registration number</strong>, the <strong class="text-white">graduate's full name</strong>, and a <strong class="text-white">verifiable QR code</strong> that links directly to our verification portal — ensuring authenticity and international recognition.</p>
                             <div class="flex flex-wrap gap-3 mt-5">
@@ -1280,7 +1366,7 @@
                                 <span class="px-3 py-1 bg-secondary/20 rounded-full text-xs font-semibold text-secondary">✓ Official iMENA Seal</span>
                             </div>
                         </div>
-                        <div class="flex-shrink-0 w-full md:w-64 lg:w-80">
+                        <div class="flex-shrink-0 w-full md:w-2/3 lg:w-3/4">
                             <img src="https://i.postimg.cc/fLGQ5Tb9/i-MENA-Learn-Certificate-Template.png" 
                                  alt="iMENA Learn Certificate Template" 
                                  class="rounded-xl shadow-2xl border border-white/10 w-full hover:scale-105 transition-transform duration-300">
@@ -1288,51 +1374,74 @@
                     </div>
                 </div>
 
-                <!-- Graduation Gallery -->
+                <!-- Graduation Gallery - LARGE FORMAT -->
                 <div class="mb-12 reveal">
                     <div class="text-center mb-8">
-                        <h3 class="text-2xl md:text-3xl font-bold text-white">Graduation Ceremony Highlights</h3>
-                        <p class="text-gray-300">Celebrating the achievements of our 2026 cohort — Rwanda's next generation of digitally empowered educators.</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white">✦ Graduation Ceremony ✦</h3>
+                        <p class="text-gray-300 text-lg">Celebrating the achievements of the iMENA Learn 2026 cohort — a growing community of learners, educators, and digital enthusiasts building practical skills for the modern world.</p>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <!-- Photo 1 -->
-                        <div class="glass-card p-3 hover:border-green-500/50 transition-all duration-300 group">
-                            <img src="https://i.postimg.cc/sDPw0DXg/20260816-142602-JPG.jpg" 
-                                 alt="iMENA Learn Graduation Ceremony - Certificate Presentation" 
-                                 class="w-full h-64 object-cover rounded-xl group-hover:scale-[1.02] transition-transform duration-300">
+
+                    <!-- Lightbox Overlay -->
+                    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
+                        <span class="lightbox-close" onclick="event.stopPropagation(); closeLightbox();">&times;</span>
+                        <img id="lightboxImage" src="" alt="Full view">
+                    </div>
+
+                    <!-- Gallery Grid - 2 columns, full size images -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Photo 1: Certificate Presentation -->
+                        <div class="glass-card p-4 hover:border-green-500/50 transition-all duration-300 group relative cursor-pointer" onclick="openLightbox('https://i.postimg.cc/sDPw0DXg/20260816-142602-JPG.jpg')">
+                            <img src="https://i.postimg.cc/zGK45060/IMG-20260824-WA0022.jpg" 
+                                 alt="Certificate Presentation Ceremony" 
+                                 class="gallery-img">
+                            <div class="absolute bottom-6 right-6 bg-black/70 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-expand text-white text-base"></i>
+                            </div>
                             <div class="p-4">
-                                <p class="text-white font-semibold">🏅 Certificate Presentation Ceremony</p>
-                                <p class="text-gray-400 text-sm">Graduates receiving their official iMENA Learn certificates during the 2026 graduation ceremony. Each certificate represents 4 weeks of intensive digital skills training.</p>
+                                <p class="text-white font-bold text-lg">🏅IZERE Kevine - RAMBURA Garçon</p>
+                                <p class="text-gray-400 text-sm">IZERE Kevine from  RAMBURA Garçon receiving her official iMENA Learn certificate during the 2026 graduation ceremony. The certificate recognizes her successful completion of four weeks of practical training in digital skills, AI, productivity tools, and modern technology.</p>
                             </div>
                         </div>
-                        <!-- Photo 2 -->
-                        <div class="glass-card p-3 hover:border-green-500/50 transition-all duration-300 group">
+
+                        <!-- Photo 2: Group Photo -->
+                        <div class="glass-card p-4 hover:border-green-500/50 transition-all duration-300 group relative cursor-pointer" onclick="openLightbox('https://i.postimg.cc/htPbyL6N/DSCPDC-0001-BURST20260816172003784-COVER.jpg')">
                             <img src="https://i.postimg.cc/htPbyL6N/DSCPDC-0001-BURST20260816172003784-COVER.jpg" 
-                                 alt="iMENA Learn Graduates Group Photo" 
-                                 class="w-full h-64 object-cover rounded-xl group-hover:scale-[1.02] transition-transform duration-300">
+                                 alt="Cohort 2026 Group Photo" 
+                                 class="gallery-img">
+                            <div class="absolute bottom-6 right-6 bg-black/70 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-expand text-white text-base"></i>
+                            </div>
                             <div class="p-4">
-                                <p class="text-white font-semibold">📸 Cohort 2026 — Group Photo</p>
-                                <p class="text-gray-400 text-sm">A proud moment for the 54 graduates who completed the program. These future teachers are now equipped with AI, Google Workspace, and Canva skills to transform Rwandan classrooms.</p>
+                                <p class="text-white font-bold text-lg">🏅 IRADUKUNDA Sylvina - G.S Gahanga</p>
+                                <p class="text-gray-400 text-sm">IRADUKUNDA Sylvina of G.S. Gahanga receiving her official iMENA Learn certificate. A proud moment from the 2026 graduation ceremony, celebrating the achievement of 54 graduates who completed the program and strengthened their skills in AI, Google Workspace, Canva, and modern digital tools.</p>
                             </div>
                         </div>
-                        <!-- Photo 3 -->
-                        <div class="glass-card p-3 hover:border-green-500/50 transition-all duration-300 group">
+
+                        <!-- Photo 3: Graduates with Certificates -->
+                        <div class="glass-card p-4 hover:border-green-500/50 transition-all duration-300 group relative cursor-pointer" onclick="openLightbox('https://i.postimg.cc/t4CtS3w3/DSCPDC-0002-BURST20260824161037641-COVER.jpg')">
                             <img src="https://i.postimg.cc/t4CtS3w3/DSCPDC-0002-BURST20260824161037641-COVER.jpg" 
-                                 alt="iMENA Learn Graduates with Certificates" 
-                                 class="w-full h-64 object-cover rounded-xl group-hover:scale-[1.02] transition-transform duration-300">
+                                 alt="Graduates with Certificates" 
+                                 class="gallery-img">
+                            <div class="absolute bottom-6 right-6 bg-black/70 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-expand text-white text-base"></i>
+                            </div>
                             <div class="p-4">
-                                <p class="text-white font-semibold">🎓 Graduates with Their Certificates</p>
-                                <p class="text-gray-400 text-sm">Proud graduates showcasing their iMENA Learn certificates. These educators are now ready to integrate digital tools into their teaching practice, advancing the quality of education in Rwanda.</p>
+                                <p class="text-white font-bold text-lg">🏅 HAGENIMANA Leonce - St. Mary High School Kiruhura</p>
+                                <p class="text-gray-400 text-sm">HAGENIMANA Leonce, an MPG student at St. Mary High School Kiruhura, proudly receiving his iMENA Learn certificate after completing four weeks of practical digital skills training in AI, Google Workspace, Canva, and modern technology.</p>
                             </div>
                         </div>
-                        <!-- Photo 4 - Additional photo placeholder (using the second photo again as a fallback, but you can replace) -->
-                        <div class="glass-card p-3 hover:border-green-500/50 transition-all duration-300 group">
+
+                        <!-- Photo 4: Celebration and Joy -->
+                        <div class="glass-card p-4 hover:border-green-500/50 transition-all duration-300 group relative cursor-pointer" onclick="openLightbox('https://i.postimg.cc/0ycZPWDB/20260816-142937-JPG.jpg')">
                             <img src="https://i.postimg.cc/0ycZPWDB/20260816-142937-JPG.jpg" 
-                                 alt="iMENA Learn Graduates Celebration" 
-                                 class="w-full h-64 object-cover rounded-xl group-hover:scale-[1.02] transition-transform duration-300">
+                                 alt="Celebration and Joy" 
+                                 class="gallery-img">
+                            <div class="absolute bottom-6 right-6 bg-black/70 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-expand text-white text-base"></i>
+                            </div>
                             <div class="p-4">
-                                <p class="text-white font-semibold">📷 Celebration and Joy</p>
-                                <p class="text-gray-400 text-sm">Graduates celebrating their achievement. The iMENA Learn program not only builds skills but also fosters a community of passionate educators committed to innovation.</p>
+                                <p class="text-white font-bold text-lg">🏅 MUHIRWA Jacques - St. Mary High School Kiruhura</p>
+                                <p class="text-gray-400 text-sm">MUHIRWA Jacques an PCB student from St. Mary High School Kiruhura receiving his official iMENA Learn certificate during the 2026 graduation ceremony. The certificate recognizes his successful completion of four weeks of practical training in digital skills, AI, productivity tools, and modern technology.</p>
                             </div>
                         </div>
                     </div>
@@ -1341,20 +1450,44 @@
                 <!-- Key Stats -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
                     <div class="glass-card p-5 text-center">
-                        <div class="text-3xl font-black text-green-400">54</div>
+                        <div class="text-4xl font-black text-green-400">21</div>
                         <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Graduates Certified</p>
                     </div>
                     <div class="glass-card p-5 text-center">
-                        <div class="text-3xl font-black text-primary">100%</div>
+                        <div class="text-4xl font-black text-primary">93%</div>
                         <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Completion Rate</p>
                     </div>
                     <div class="glass-card p-5 text-center">
-                        <div class="text-3xl font-black text-secondary">4</div>
+                        <div class="text-4xl font-black text-secondary">4</div>
                         <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Weeks of Training</p>
                     </div>
                     <div class="glass-card p-5 text-center">
-                        <div class="text-3xl font-black text-accent">6+</div>
+                        <div class="text-4xl font-black text-accent">11+</div>
                         <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Digital Tools Mastered</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructor Section -->
+        <section class="py-20">
+            <div class="container-custom">
+                <div class="glass-premium p-8 md:p-12 reveal">
+                    <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+                        <div class="flex-shrink-0">
+                            <img src="https://i.postimg.cc/vZh5WXTm/chrisostom.jpg" alt="TUYISENGE Jean Chrisostom" class="instructor-img w-40 h-40 md:w-48 md:h-48">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white">TUYISENGE Jean Chrisostom</h3>
+                            <p class="text-primary text-lg mt-1">Founder & Lead Trainer</p>
+                            <p class="text-gray-300 mt-4 leading-relaxed">A student teacher at TTC Muhanga studying Language Education and a full-stack developer focused on EdTech. Chrisostom is dedicated to helping others grow through technology.</p>
+                            <div class="flex flex-wrap gap-3 mt-5 justify-center md:justify-start">
+                                <span class="px-3 py-1 bg-primary/20 rounded-full text-xs font-semibold">Founder & Owner</span>
+                                <span class="px-3 py-1 bg-secondary/20 rounded-full text-xs font-semibold">EdTech Specialist</span>
+                                <span class="px-3 py-1 bg-accent/20 rounded-full text-xs font-semibold">Web Developer</span>
+                                <span class="px-3 py-1 bg-green-500/20 rounded-full text-xs font-semibold text-green-400">Future Teachers Trainer</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1370,18 +1503,18 @@
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="glass-card p-6 reveal">
                         <i class="fas fa-quote-left text-green-400 text-2xl mb-3 opacity-50"></i>
-                        <p class="text-gray-300">"Before this camp, I only used my phone for calls and messages. Now I can edit videos, use AI, and run a classroom online. Game-changer!"</p>
-                        <p class="text-primary font-bold mt-4">- Thierry, Y2SSE at TTC MUHANGA</p>
+                        <p class="text-gray-300">"lBefore joining iMENA Learn I was using my phone for just calling and texting messages, but now I use it for planning lesson plans with AI and use AI responsibly."</p>
+                        <p class="text-primary font-bold mt-4">NISHIMWE IRASUBIZA Claudine - TTC MUHANGA</p>
                     </div>
                     <div class="glass-card p-6 reveal">
                         <i class="fas fa-quote-left text-green-400 text-2xl mb-3 opacity-50"></i>
-                        <p class="text-gray-300">"Before this camp, I avoided Google products. Now I'm confident managing 100+ students online. The support from Jean was amazing."</p>
-                        <p class="text-primary font-bold mt-4">- Sammuel, Y2LE at TTC MATIMBA</p>
+                        <p class="text-gray-300">"Before iMENA Learn I didn’t knew hot to Use Canva to make invitations, presentations, edit images and videos,.. but now I know them!"</p>
+                        <p class="text-primary font-bold mt-4">MUHIRWA Jacques -St. Mary High School Kiruhura</p>
                     </div>
                     <div class="glass-card p-6 reveal">
                         <i class="fas fa-quote-left text-green-400 text-2xl mb-3 opacity-50"></i>
-                        <p class="text-gray-300">"I thought Canva was only for experts. AI? No way! But after this camp, I made professional content for my future school. Highly recommended!"</p>
-                        <p class="text-primary font-bold mt-4">- Agnes, Y1SME at TTC NYAMATA</p>
+                        <p class="text-gray-300">"Before attending iMENA Learn I didn’t know how to  make best advanced Presentations, but now I can make best presenation with Ai."</p>
+                        <p class="text-primary font-bold mt-4">IRADUKUNDA Sylvine - GS GAHANGA</p>
                     </div>
                 </div>
             </div>
@@ -1508,12 +1641,10 @@
             <img src="https://i.postimg.cc/rmqp5jT3/IMENA-LOGO.png" alt="iMENA Learn" class="mx-auto mb-4" style="max-height: 45px;">
             <p class="text-gray-400 text-sm">Learn. Create. Teach. Lead.</p>
             
-            <!-- iMENA Hub Ecosystem Badge -->
             <div class="mt-3 inline-block px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10">
                 <span class="text-xs text-green-400 font-semibold tracking-wider">🌍 Part of the iMENA Hub Ecosystem</span>
             </div>
             
-            <!-- Social Links -->
             <div class="flex justify-center gap-6 mt-5">
                 <a href="https://www.instagram.com/blad.rw/" target="_blank" class="social-icon text-gray-500 hover:text-pink-500 transition duration-300" aria-label="Instagram">
                     <i class="fab fa-instagram text-xl"></i>
@@ -1532,7 +1663,6 @@
                 </a>
             </div>
             
-            <!-- Contact Email -->
             <p class="text-gray-500 text-xs mt-3">
                 📧 <a href="mailto:imenahub.rw@gmail.com" class="hover:text-green-400 transition">imenahub.rw@gmail.com</a>
             </p>
@@ -1766,6 +1896,27 @@
             }, 20000);
         }
 
+        // ===== LIGHTBOX FUNCTIONALITY =====
+        const overlay = document.getElementById('lightboxOverlay');
+        const lightboxImg = document.getElementById('lightboxImage');
+
+        function openLightbox(src) {
+            if (!src) return;
+            lightboxImg.src = src;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
         // ===== AI ASSISTANT CHAT SYSTEM =====
         const aiFloatBtn = document.getElementById('aiFloatBtn');
         const aiChatWindow = document.getElementById('aiChatWindow');
@@ -1773,7 +1924,6 @@
         const aiChatMessages = document.getElementById('aiChatMessages');
         const aiChatInput = document.getElementById('aiChatInput');
 
-        // AI Knowledge Base
         const aiResponses = {
             'what is imena learn': "iMENA Learn is a 4-week digital skills training program for future teachers in Rwanda. We teach AI, Canva, Google Classroom, and practical digital skills — all using just a smartphone! 🎓",
             'how do i join': "To join iMENA Learn, simply fill out the registration form on this website. Click the 'Register Now' button or scroll down to the registration section. Once you register, we'll contact you via WhatsApp with all the details! 📱",
@@ -1848,7 +1998,6 @@
             sendMessage();
         }
 
-        // Event Listeners
         aiFloatBtn.addEventListener('click', () => {
             aiChatWindow.classList.toggle('open');
         });
@@ -1861,7 +2010,6 @@
             if (e.key === 'Enter') sendMessage();
         });
 
-        // Close chat on outside click
         document.addEventListener('click', (e) => {
             if (!aiChatWindow.contains(e.target) && !aiFloatBtn.contains(e.target)) {
                 aiChatWindow.classList.remove('open');
@@ -1872,6 +2020,7 @@
         console.log('📊 Live Stats: 54 graduates, 100% completion rate');
         console.log('🌍 Part of the iMENA Hub Ecosystem');
         console.log('🤖 AI Assistant is online and ready to help!');
+        console.log('📸 Gallery images loaded from PostImages in LARGE format');
     </script>
 
 </body>
