@@ -1,2027 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-adsense-account" content="ca-pub-6280162941587338">
-    
-    <title>iMENA Learn</title>
-    <meta name="description" content="iMENA Learn offers world-class digital skills training for future teachers in Rwanda. Master AI, Canva, Google Classroom, and modern teaching tools in our intensive 4-week program.">
-    <meta name="keywords" content="iMENA Learn, digital skills, teacher training, Rwanda, AI for teachers, Canva, Google Classroom, EdTech, future teachers">
-    <meta name="author" content="TUYISENGE Jean Chrisostom">
-    <meta name="robots" content="index, follow">
-    
-    <meta name="google-site-verification" content="google032a1c0247e80db4.html">
-    <link rel="canonical" href="https://imenalearn.vercel.app/">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
-    <meta name="theme-color" content="#0A0E17">
-    
-    <meta property="og:title" content="iMENA Learn | Digital Skills for Future Teachers">
-    <meta property="og:description" content="Master AI, Canva, and Google Classroom in our 4-week weekend program. Enroll now!">
-    <meta property="og:url" content="https://imenalearn.vercel.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://imenalearn.vercel.app/android-chrome-512x512.png">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="iMENA Learn | Digital Skills for Future Teachers">
-    <meta name="twitter:description" content="Master AI, Canva, and Google Classroom in our 4-week weekend program.">
-    <meta name="twitter:image" content="https://imenalearn.vercel.app/android-chrome-512x512.png">
-    
-    <meta name="geo.region" content="RW">
-    <meta name="geo.placename" content="Muhanga">
-    <meta name="geo.position" content="-2.0833;29.75">
-    <meta name="ICBM" content="-2.0833, 29.75">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
-            }
-        }
-    </script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
-    
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
-            "name": "iMENA Learn",
-            "url": "https://imenalearn.vercel.app/",
-            "logo": "https://imenalearn.vercel.app/android-chrome-512x512.png",
-            "description": "Digital skills training program for future teachers in Rwanda.",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Muhanga",
-                "addressCountry": "RW"
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+250796717230",
-                "contactType": "customer service"
-            },
-            "founder": {
-                "@type": "Person",
-                "name": "TUYISENGE Jean Chrisostom"
-            }
-        }
-    </script>
-    
-    <style>
-        :root {
-            --color-bg-primary: #05050A;
-            --color-bg-secondary: #0A0A14;
-            --color-primary: #3B82F6;
-            --color-secondary: #8B5CF6;
-            --color-accent: #06B6D4;
-            --color-success: #10B981;
-            --color-success-light: #34D399;
-            --color-warning: #F59E0B;
-            --font-sans: 'Inter', sans-serif;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: var(--font-sans);
-            background: var(--color-bg-primary);
-            overflow-x: hidden;
-            color: #FFFFFF;
-        }
-        
-        .glass-premium {
-            background: rgba(10, 15, 30, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(59, 130, 246, 0.25);
-            border-radius: 2rem;
-        }
-        
-        .glass-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 1.5rem;
-            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--color-secondary);
-            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.4);
-        }
-        
-        .btn-premium {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            border: none;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
-        }
-        
-        .btn-premium:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 35px rgba(59, 130, 246, 0.6);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--color-primary);
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            color: white;
-            transition: all 0.3s;
-        }
-        
-        .btn-outline:hover {
-            background: rgba(59, 130, 246, 0.15);
-            border-color: var(--color-secondary);
-        }
-        
-        .btn-success {
-            background: linear-gradient(135deg, var(--color-success), #059669);
-            border: none;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
-        }
-        
-        .btn-success:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 35px rgba(16, 185, 129, 0.6);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4, #3B82F6);
-            background-size: 300% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradientFlow 4s linear infinite;
-        }
-        
-        .gradient-text-green {
-            background: linear-gradient(135deg, #10B981, #34D399, #059669, #10B981);
-            background-size: 300% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradientFlow 4s linear infinite;
-        }
-        
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 300% 50%; }
-        }
-        
-        .input-premium {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(59, 130, 246, 0.4);
-            border-radius: 1rem;
-            padding: 14px 18px;
-            color: white;
-            width: 100%;
-            transition: all 0.3s;
-        }
-        
-        .input-premium:focus {
-            outline: none;
-            border-color: var(--color-primary);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .container-custom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 0.8s linear infinite;
-        }
-        
-        @keyframes spin { to { transform: rotate(360deg); } }
-        
-        .toast-notification {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            background: linear-gradient(135deg, #10B981, #059669);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            z-index: 1000;
-            animation: slideIn 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        
-        .toast-error {
-            background: linear-gradient(135deg, #EF4444, #DC2626);
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateX(400px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        .instructor-img {
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--color-primary);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
-            transition: all 0.4s ease;
-        }
-        
-        .instructor-img:hover {
-            transform: scale(1.05);
-            border-color: var(--color-secondary);
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        .floating { animation: float 5s ease-in-out infinite; }
-        
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.8); }
-        }
-        .pulse-dot {
-            animation: pulse-dot 2s ease-in-out infinite;
-        }
-        
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0A0A14; }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, var(--color-success), var(--color-success-light));
-            border-radius: 10px;
-        }
-        
-        .logo-container {
-            transition: transform 0.3s ease;
-        }
-        .logo-container:hover {
-            transform: scale(1.05);
-        }
-        
-        .badge-premium {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            padding: 4px 14px;
-            border-radius: 50px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: var(--color-primary);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .stat-number-green {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #10B981, #34D399);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .certificate-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 1rem;
-            padding: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .certificate-card:hover {
-            border-color: var(--color-success);
-            background: rgba(16, 185, 129, 0.05);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.3);
-        }
-        
-        .status-badge {
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 50px;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        
-        .status-active { background: rgba(16, 185, 129, 0.2); color: #10B981; }
-        .status-completed { background: rgba(59, 130, 246, 0.2); color: #3B82F6; }
-        .status-pending { background: rgba(16, 185, 129, 0.15); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); }
-        
-        .progress-green {
-            background: linear-gradient(90deg, #10B981, #34D399, #059669);
-            background-size: 200% auto;
-            animation: shimmer 2s linear infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-        
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-        .social-icon:hover {
-            transform: scale(1.15) translateY(-2px);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>iMENA Learn</title>
+<meta name="description" content="A 4-week practical digital skills program for future teachers in Rwanda: AI, Google Workspace and Canva.">
+<meta name="author" content="TUYISENGE Jean Chrisostom">
+<meta name="theme-color" content="#0B1A2E">
+<link rel="canonical" href="https://imenalearn.vercel.app/">
+<meta property="og:title" content="iMENA Learn | Digital Skills for Future Teachers">
+<meta property="og:description" content="Master AI, Canva and Google Classroom in our 4-week program.">
+<meta property="og:image" content="https://imenalearn.vercel.app/android-chrome-512x512.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{--ink:#0B1A2E;--cy:#00E5FF;--cyd:#0891b2;--gd:#FFB347;--gdd:#a85f00;--mut:#46556e;--line:rgba(11,26,46,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y proximity}
+body{background:#050813;color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.shade{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,rgba(5,8,19,0) 50%,rgba(5,8,19,.7) 100%)}
+#track{position:relative;z-index:0}.snap{position:absolute;left:0;width:1px;height:1px;scroll-snap-align:start}
 
-        .student-grid-item {
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        .student-grid-item:hover {
-            transform: translateY(-2px);
-            border-color: var(--color-success);
-            background: rgba(16, 185, 129, 0.05);
-        }
+/* ---- fixed interface: logo left, page indicator right ---- */
+.top{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 16px 0;pointer-events:none}
+.top>*{pointer-events:auto}
+.pill{background:rgba(5,8,19,.62);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:99px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font:700 1.1rem 'Space Grotesk';padding:6px 16px 6px 10px}
+.brand img{height:30px;width:auto}.brand b{color:var(--cy)}
+.ind{display:flex;align-items:center;gap:12px;color:#d5deef;font:600 .9rem 'Space Grotesk';padding:6px 8px 6px 16px}
+.enroll{background:linear-gradient(135deg,#00b8d4,#2563eb);color:#fff;text-decoration:none;padding:6px 14px;border-radius:99px;font:600 .8rem Inter}
+#rail{position:fixed;right:12px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:11px}
+.dot{width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:transparent;cursor:pointer;padding:0}
+.dot.on{background:var(--gd);border-color:var(--gd)}
+.wa{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:#22c55e;color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 24px rgba(34,197,94,.4);transition:transform .25s ease,box-shadow .25s ease}
+.wa:hover{transform:scale(1.08);box-shadow:0 12px 32px rgba(34,197,94,.55)}
+.wa svg{width:28px;height:28px;display:block}
 
-        /* ===== LARGE GALLERY IMAGE STYLES ===== */
-        .gallery-img {
-            width: 100%;
-            height: auto;
-            min-height: 350px;
-            max-height: 700px;
-            object-fit: contain;
-            border-radius: 0.75rem;
-            background: rgba(0, 0, 0, 0.4);
-            transition: transform 0.4s ease;
-            cursor: pointer;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .gallery-img:hover {
-            transform: scale(1.01);
-        }
+/* ---- the book: HTML pages that follow the 3D book in real perspective ---- */
+#stage{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+#b3d{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;font-size:var(--fs,18px)}
+.sheet{position:absolute;left:0;top:calc(var(--ph)/-2);width:var(--pw);height:var(--ph);transform-origin:0 50%;transform-style:preserve-3d}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;pointer-events:auto}
+.face.back{transform:rotateY(180deg)}
+.lbase{position:absolute;left:calc(var(--pw)*-1);top:calc(var(--ph)/-2);width:var(--pw);height:var(--ph);pointer-events:auto}
+.nogl .face,.nogl .lbase{background:#f1eee3}
 
-        /* Full-width hero image */
-        .gallery-hero-img {
-            width: 100%;
-            height: auto;
-            max-height: 600px;
-            object-fit: contain;
-            border-radius: 1rem;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        /* ===== LIGHTBOX OVERLAY ===== */
-        .lightbox-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.93);
-            backdrop-filter: blur(12px);
-            z-index: 9999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
-            padding: 30px;
-        }
-        .lightbox-overlay.active {
-            display: flex;
-        }
-        .lightbox-overlay img {
-            max-width: 95%;
-            max-height: 92%;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.9);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 25px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: 0.3s;
-            z-index: 10000;
-        }
-        .lightbox-close:hover {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        /* ===== AI ASSISTANT FLOATING CHAT ===== */
-        .ai-float-btn {
-            position: fixed;
-            bottom: 90px;
-            right: 24px;
-            z-index: 999;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #3B82F6, #8B5CF6, #06B6D4);
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-            box-shadow: 0 4px 30px rgba(59, 130, 246, 0.4);
-            transition: all 0.3s ease;
-            animation: pulse-glow 2s ease-in-out infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ai-float-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 50px rgba(59, 130, 246, 0.6);
-        }
-
-        .ai-float-btn .pulse-ring {
-            position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            animation: ring-pulse 2s ease-out infinite;
-        }
-
-        @keyframes ring-pulse {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.5); opacity: 0; }
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 4px 30px rgba(59, 130, 246, 0.4); }
-            50% { box-shadow: 0 4px 50px rgba(139, 92, 246, 0.6); }
-        }
-
-        .ai-chat-window {
-            position: fixed;
-            bottom: 160px;
-            right: 24px;
-            z-index: 998;
-            width: 380px;
-            max-width: calc(100vw - 48px);
-            max-height: 80vh;
-            background: rgba(10, 14, 26, 0.95);
-            backdrop-filter: blur(24px);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 24px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .ai-chat-window.open {
-            display: flex;
-            animation: slideUp 0.4s cubic-bezier(0.2, 0.9, 0.4, 1);
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .ai-chat-header {
-            padding: 16px 20px;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-shrink: 0;
-        }
-
-        .ai-chat-header .ai-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .ai-chat-header .ai-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            color: white;
-            font-weight: 700;
-        }
-
-        .ai-chat-header .ai-name {
-            font-weight: 700;
-            font-size: 0.95rem;
-            background: linear-gradient(135deg, #fff, rgba(255,255,255,0.7));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .ai-chat-header .ai-status {
-            font-size: 0.7rem;
-            color: #10B981;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            -webkit-text-fill-color: #10B981;
-        }
-
-        .ai-chat-header .ai-status .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #10B981;
-            animation: pulse-dot 1.5s ease-in-out infinite;
-        }
-
-        .ai-chat-close {
-            background: none;
-            border: none;
-            color: rgba(255,255,255,0.4);
-            cursor: pointer;
-            font-size: 20px;
-            padding: 4px 8px;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-
-        .ai-chat-close:hover {
-            color: #fff;
-            background: rgba(255,255,255,0.05);
-        }
-
-        .ai-chat-messages {
-            flex: 1;
-            padding: 16px 20px;
-            overflow-y: auto;
-            max-height: 400px;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            scroll-behavior: smooth;
-        }
-
-        .ai-chat-messages::-webkit-scrollbar {
-            width: 3px;
-        }
-        .ai-chat-messages::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .ai-chat-messages::-webkit-scrollbar-thumb {
-            background: rgba(59, 130, 246, 0.3);
-            border-radius: 10px;
-        }
-
-        .ai-msg {
-            max-width: 85%;
-            padding: 10px 14px;
-            border-radius: 16px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            animation: msgIn 0.3s ease;
-        }
-
-        @keyframes msgIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .ai-msg-bot {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.04);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-            color: rgba(255,255,255,0.85);
-        }
-
-        .ai-msg-user {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-            border: 1px solid rgba(59, 130, 246, 0.15);
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-            color: #fff;
-        }
-
-        .ai-msg-typing {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.04);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-            padding: 12px 16px;
-            display: flex;
-            gap: 4px;
-        }
-
-        .ai-msg-typing span {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            animation: typingBounce 1.4s ease-in-out infinite;
-        }
-
-        .ai-msg-typing span:nth-child(2) { animation-delay: 0.2s; }
-        .ai-msg-typing span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes typingBounce {
-            0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-8px); }
-        }
-
-        .ai-chat-input-area {
-            padding: 12px 16px 16px;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            display: flex;
-            gap: 10px;
-            flex-shrink: 0;
-        }
-
-        .ai-chat-input-area input {
-            flex: 1;
-            padding: 10px 14px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.06);
-            background: rgba(255,255,255,0.03);
-            color: #fff;
-            font-size: 0.9rem;
-            outline: none;
-            transition: all 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .ai-chat-input-area input::placeholder {
-            color: rgba(255,255,255,0.25);
-        }
-
-        .ai-chat-input-area input:focus {
-            border-color: rgba(59, 130, 246, 0.3);
-            background: rgba(255,255,255,0.06);
-        }
-
-        .ai-chat-input-area button {
-            padding: 10px 18px;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.85rem;
-        }
-
-        .ai-chat-input-area button:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
-        }
-
-        .ai-suggestions {
-            padding: 4px 16px 8px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            flex-shrink: 0;
-        }
-
-        .ai-suggestions button {
-            padding: 4px 12px;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.06);
-            background: rgba(255,255,255,0.03);
-            color: rgba(255,255,255,0.5);
-            font-size: 0.7rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .ai-suggestions button:hover {
-            border-color: rgba(59, 130, 246, 0.3);
-            color: #fff;
-            background: rgba(59, 130, 246, 0.05);
-        }
-
-        @media (max-width: 480px) {
-            .ai-chat-window {
-                bottom: 140px;
-                right: 12px;
-                left: 12px;
-                width: auto;
-                max-height: 70vh;
-            }
-            .ai-float-btn {
-                bottom: 80px;
-                right: 16px;
-                width: 50px;
-                height: 50px;
-                font-size: 22px;
-            }
-            .gallery-img {
-                min-height: 200px;
-                max-height: 400px;
-            }
-            .gallery-hero-img {
-                max-height: 300px;
-            }
-            .lightbox-close {
-                top: 15px;
-                right: 20px;
-                font-size: 30px;
-            }
-            .lightbox-overlay {
-                padding: 15px;
-            }
-        }
-    </style>
+/* ---- page typography (everything in em so it scales with the book) ---- */
+.pg{position:absolute;inset:0;padding:2.5em 1.5em 2.6em 2.6em;display:flex;flex-direction:column;gap:.8em;overflow:hidden;line-height:1.5}
+.pg.lp{padding:2.5em 2.6em 2.6em 1.5em}
+.k{font:700 .62em 'Space Grotesk';letter-spacing:.16em;color:var(--cyd);text-transform:uppercase}
+.pg h2{font:700 1.85em/1.12 'Space Grotesk';color:var(--ink)}
+.pg h3{font:700 1.05em 'Space Grotesk'}
+.pg p{color:var(--mut);font-size:.9em}
+.bar{width:3em;height:.25em;background:var(--gd);border-radius:9em}
+.li{display:flex;gap:.7em;align-items:center;padding:.6em .8em;border:1px solid var(--line);border-radius:.7em;background:rgba(255,255,255,.55);font-weight:600;font-size:.95em}
+.li i{flex:none;width:.5em;height:.5em;background:var(--gd);border-radius:50%}
+.li em{font-style:normal;font-size:1.15em}
+.note{color:var(--cyd);font-weight:600;font-style:italic;font-size:.95em}
+.foot{position:absolute;left:2.6em;right:1.5em;bottom:1.1em;display:flex;justify-content:space-between;font:600 .55em Inter;color:#8592a8;letter-spacing:.06em}
+.lp .foot{left:1.5em;right:2.6em}
+.tri{display:flex;flex-direction:column;gap:.1em;font:700 1.15em 'Space Grotesk'}
+.tri b:nth-child(2){color:var(--cyd)}.tri b:nth-child(3){color:var(--gdd)}
+/* cover */
+.cv{color:#fff;justify-content:center;gap:.9em;padding:2.6em 2.2em 2.6em 3.2em}
+.cv .k{color:var(--cy)}.cv .foot{display:none}
+.cv img{height:3.2em;width:auto;align-self:flex-start}
+.cv h1{font:700 3.1em/1 'Space Grotesk'}.cv h1 span{color:var(--cy)}
+.cv h3{font-size:1.2em;color:#d5deef;font-weight:600}
+.cv .tri{font-size:1.3em}.cv .tri b:nth-child(1){color:#fff}.cv .tri b:nth-child(2){color:var(--cy)}.cv .tri b:nth-child(3){color:var(--gd)}
+.hint{color:#9fb0cc!important;letter-spacing:.1em;margin-top:1.2em;animation:nudge 2s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(.35em)}}
+/* journey */
+.st{display:flex;align-items:center;gap:.9em;position:relative}
+.st b{flex:none;width:2.3em;height:2.3em;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:700 .8em 'Space Grotesk';z-index:1}
+.st span{font:700 1.3em 'Space Grotesk'}
+.st:not(:last-child)::after{content:'';position:absolute;left:1.1em;top:2.3em;height:1.3em;width:2px;background:rgba(8,145,178,.4)}
+.st+.st{margin-top:.7em}
+/* left pages */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.7em}
+.sx{border:1px solid var(--line);border-radius:.8em;padding:.8em;text-align:center;background:rgba(255,255,255,.55)}
+.sx b{display:block;font:700 1.9em 'Space Grotesk'}.sx span{font-size:.72em;color:var(--mut)}
+.who{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5em}
+.who img{width:7.5em;height:7.5em;border-radius:50%;object-fit:cover;border:3px solid var(--cyd)}
+.wk{display:flex;gap:.7em;align-items:flex-start;padding:.55em .7em;border:1px solid var(--line);border-radius:.7em;background:rgba(255,255,255,.55)}
+.wk b{flex:none;width:1.8em;height:1.8em;border-radius:.5em;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:.85em}
+.wk h3{font-size:.9em}.wk p{font-size:.78em}
+img[data-zoom]{width:100%;border-radius:.6em;border:1px solid var(--line);cursor:zoom-in;display:block}
+.sh img{height:7.2em;object-fit:cover}.sh h3{font-size:.78em;margin-top:.3em}.sh p{font-size:.68em}
+.tags{display:flex;flex-wrap:wrap;gap:.45em}.tags span{padding:.25em .7em;border-radius:99px;background:rgba(8,145,178,.1);color:var(--cyd);font-weight:600;font-size:.72em}
+blockquote{border-left:3px solid var(--gd);padding:.2em .8em;font-size:.82em;color:#34425b}
+blockquote cite{display:block;margin-top:.3em;font-style:normal;font-weight:700;color:var(--cyd);font-size:.85em}
+details{border:1px solid var(--line);border-radius:.7em;padding:.55em .8em;background:rgba(255,255,255,.55)}
+summary{cursor:pointer;font-weight:600;font-size:.85em}details p{margin-top:.4em;font-size:.78em}
+.ct a{color:var(--cyd);text-decoration:none;font-weight:600}.ct a:hover{text-decoration:underline}
+.ct{display:flex;flex-direction:column;gap:.35em;font-size:.88em;color:var(--mut)}
+.dev{margin-top:auto;padding-top:.8em;border-top:1px solid var(--line);font-size:.8em;color:var(--mut)}.dev a{color:var(--gdd);font-weight:800;text-decoration:none}
+/* form */
+.fm{display:grid;grid-template-columns:1fr 1fr;gap:.5em}.full{grid-column:1/-1}
+.fm input,.fm select,.fm textarea{width:100%;padding:.5em .65em;border:1px solid var(--line);border-radius:.6em;background:#fff;font:inherit;font-size:.8em;color:var(--ink)}
+.fm input:focus,.fm select:focus,.fm textarea:focus{outline:2px solid var(--cyd)}
+.btn{background:var(--ink);color:#fff;border:0;border-radius:.7em;padding:.7em;font:600 .9em Inter;cursor:pointer}.btn:hover{background:#13304f}
+.lb{position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.93);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb.on{display:flex}.lb img{max-width:96%;max-height:94%;border-radius:10px}
+@media(max-width:780px){#rail{display:none}.brand{font-size:.95rem}.ind{font-size:.8rem}.wa{width:48px;height:48px}.wa svg{width:24px;height:24px}}
+</style>
 </head>
 <body>
+<canvas id="bg"></canvas><div class="shade"></div>
 
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"></canvas>
+<header class="top">
+  <a class="brand pill" href="#" aria-label="iMENA Learn"><img src="https://i.postimg.cc/rmqp5jT3/IMENA-LOGO.png" alt="" onerror="this.style.display='none'"><span>iMENA <b>Learn</b></span></a>
+  <div class="ind pill" aria-live="polite"><span><span id="cur">01</span> / <span id="tot">08</span></span><a class="enroll" id="enroll" href="#">Enroll</a></div>
+</header>
+<nav id="rail" aria-label="Book pages"></nav>
+<div id="stage"><div id="b3d"></div></div>
+<div id="track"></div>
+<a class="wa" href="https://wa.me/250796717230" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<div class="lb" id="lb"><img id="lbi" alt=""></div>
 
-    <div class="relative z-10">
-        
-        <!-- Sticky CTA -->
-        <div class="fixed bottom-6 right-6 z-50">
-            <a href="#register" class="btn-premium text-sm py-3 px-5 shadow-2xl animate-pulse">
-                <i class="fas fa-graduation-cap mr-2"></i> Register Now
-            </a>
-        </div>
-        <a href="https://wa.me/250796717230" target="_blank" class="fixed bottom-6 left-6 z-50 bg-gradient-to-r from-green-500 to-green-600 w-14 h-14 rounded-full flex items-center justify-center text-white text-xl hover:scale-110 transition-transform shadow-xl">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+<!-- PAGE CONTENT: moved into the 3D book by the script. R = right-hand page, L = left-hand page. -->
+<div id="src" hidden>
 
-        <!-- AI Assistant Floating Button -->
-        <button class="ai-float-btn" id="aiFloatBtn" aria-label="Chat with AI Assistant">
-            <span class="pulse-ring"></span>
-            <i class="fas fa-robot"></i>
-        </button>
+<article class="pg cv" data-id="R0">
+  <img src="https://i.postimg.cc/rmqp5jT3/IMENA-LOGO.png" alt="iMENA Learn logo" onerror="this.style.display='none'">
+  <p class="k">4-week ICT Holiday Camp · Rwanda</p>
+  <h1>iMENA <span>Learn</span></h1>
+  <h3>Digital Skills for Future Teachers</h3>
+  <div class="tri"><b>Learn Today.</b><b>Teach Tomorrow.</b><b>Lead Tomorrow.</b></div>
+  <p class="hint">Scroll to explore ↓</p>
+</article>
 
-        <!-- AI Chat Window -->
-        <div class="ai-chat-window" id="aiChatWindow">
-            <div class="ai-chat-header">
-                <div class="ai-info">
-                    <div class="ai-avatar"><i class="fas fa-robot"></i></div>
-                    <div>
-                        <div class="ai-name">iMENA AI Assistant</div>
-                        <div class="ai-status"><span class="dot"></span> Online</div>
-                    </div>
-                </div>
-                <button class="ai-chat-close" id="aiChatClose"><i class="fas fa-times"></i></button>
-            </div>
+<article class="pg" data-id="L0">
+  <p class="k">At a glance</p><h2>iMENA Learn in numbers</h2><div class="bar"></div>
+  <div class="g2">
+    <div class="sx"><b>54</b><span>Learners trained</span></div><div class="sx"><b>21</b><span>Certified graduates</span></div>
+    <div class="sx"><b>4</b><span>Weeks of training</span></div><div class="sx"><b>11+</b><span>Digital tools mastered</span></div>
+  </div>
+  <p>Live lessons, Monday to Friday, 10 AM – 1 PM, on WhatsApp video. A smartphone is enough.</p>
+</article>
 
-            <div class="ai-suggestions" id="aiSuggestions">
-                <button onclick="sendSuggestion('What is iMENA Learn?')">What is iMENA Learn?</button>
-                <button onclick="sendSuggestion('How do I join?')">How do I join?</button>
-                <button onclick="sendSuggestion('What will I learn?')">What will I learn?</button>
-                <button onclick="sendSuggestion('Tell me about AI')">Tell me about AI</button>
-            </div>
+<article class="pg" data-id="R1">
+  <p class="k">About</p><h2>What is iMENA Learn?</h2><div class="bar"></div>
+  <p>iMENA Learn is a practical digital skills program designed to help future teachers become confident with technology.</p>
+  <div class="li"><i></i>Learn technology.</div><div class="li"><i></i>Practice technology.</div><div class="li"><i></i>Use technology to teach.</div>
+</article>
 
-            <div class="ai-chat-messages" id="aiChatMessages">
-                <div class="ai-msg ai-msg-bot">
-                    👋 Hello! I'm the iMENA Learn AI Assistant. I can help you with:
-                    <br>• Program information
-                    <br>• Digital skills guidance
-                    <br>• AI and tech questions
-                    <br>• Teaching with technology
-                    <br><br>What would you like to know?
-                </div>
-            </div>
+<article class="pg" data-id="L1">
+  <p class="k">Your trainer</p>
+  <div class="who">
+    <img src="https://i.postimg.cc/vZh5WXTm/chrisostom.jpg" alt="TUYISENGE Jean Chrisostom" onerror="this.style.display='none'">
+    <h2 style="font-size:1.35em">TUYISENGE Jean Chrisostom</h2><span class="k">Founder and Lead Trainer</span>
+    <p>Student teacher at TTC Muhanga (Language Education) and full-stack developer focused on EdTech. He helps others grow through technology.</p>
+  </div>
+</article>
 
-            <div class="ai-chat-input-area">
-                <input type="text" id="aiChatInput" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter') sendMessage()">
-                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
+<article class="pg" data-id="R2">
+  <p class="k">Learning areas</p><h2>What Will You Learn?</h2><div class="bar"></div>
+  <div class="li"><em>🧠</em>AI for Education</div><div class="li"><em>🎨</em>Canva Design</div><div class="li"><em>🏫</em>Google Classroom</div><div class="li"><em>📂</em>Google Workspace</div><div class="li"><em>📱</em>Digital Teaching Skills</div>
+</article>
 
-        <!-- Navigation -->
-        <nav class="fixed top-0 left-0 w-full z-40 glass-premium rounded-none border-t-0 border-l-0 border-r-0 py-3 px-4">
-            <div class="container-custom flex items-center justify-between">
-                <a href="#" class="flex items-center gap-2">
-                    <img src="https://i.postimg.cc/rmqp5jT3/IMENA-LOGO.png" alt="iMENA Learn" style="max-height: 35px;">
-                </a>
-                <div class="hidden md:flex items-center gap-6 text-sm">
-                    <a href="#program" class="text-gray-300 hover:text-white transition">Program</a>
-                    <a href="#students" class="text-gray-300 hover:text-white transition">Students</a>
-                    <a href="#certificates" class="text-gray-300 hover:text-white transition">Certificates</a>
-                    <a href="#register" class="btn-premium text-xs py-2 px-4">Enroll</a>
-                </div>
-                <button id="mobileMenuBtn" class="md:hidden text-white text-xl">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
+<article class="pg" data-id="L2">
+  <p class="k">Program</p><h2>4 weeks, step by step</h2><div class="bar"></div>
+  <div class="wk"><b>1</b><div><h3>Digital foundations</h3><p>Smartphone basics, internet, digital safety.</p></div></div>
+  <div class="wk"><b>2</b><div><h3>AI and smart tools</h3><p>Prompting, Google Maps, practical AI tools.</p></div></div>
+  <div class="wk"><b>3</b><div><h3>Google Workspace</h3><p>Drive, Docs, Forms, Classroom, Gmail.</p></div></div>
+  <div class="wk"><b>4</b><div><h3>Canva and certification</h3><p>Design, presentations, final project.</p></div></div>
+</article>
 
-        <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-            <div class="container-custom text-center relative z-10">
-                <div class="mb-8 floating logo-container">
-                    <a href="https://postimg.cc/B8ws0xXB" target="_blank">
-                        <img src="https://i.postimg.cc/rmqp5jT3/IMENA-LOGO.png" alt="iMENA Learn Logo" class="mx-auto" style="max-height: 100px; width: auto;">
-                    </a>
-                </div>
-                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-premium mb-6">
-                    <i class="fas fa-calendar-alt text-primary text-xs"></i>
-                    <span class="text-xs font-bold tracking-wide">4-weeks ICT Holiday Camp for Rwandan Future Teachers</span>
-                </div>
-                <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-5 tracking-tighter">
-                    <span class="text-white">iMENA</span> <span class="gradient-text">Learn</span>
-                </h1>
-                <p class="text-2xl md:text-4xl font-bold text-white mb-4">Digital Skills for <span class="gradient-text">Future Teachers</span></p>
-                <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10">iMENA Learn   is a 4-week practical digital skills program designed to transform beginners into confident technology users through live demonstrations, smartphone-based learning, and guided hands-on practice.  </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#register" class="btn-premium text-lg"><i class="fas fa-rocket mr-2"></i> Register Now →</a>
-                    <a href="#program" class="btn-outline text-lg"><i class="fas fa-play-circle mr-2"></i> Explore Program</a>
-                </div>
-                
-                <div class="mt-16 glass-premium p-6 rounded-2xl max-w-2xl mx-auto">
-                    <div class="flex items-center justify-between flex-wrap gap-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                            <span class="text-sm text-gray-300">Live Registrations</span>
-                        </div>
-                        <div class="flex items-baseline gap-2">
-                            <span id="liveCounter" class="text-5xl font-black text-primary">247</span>
-                            <span class="text-gray-400">students registered</span>
-                        </div>
-                        <div class="text-sm text-gray-400">🎯 Target: 400 students</div>
-                    </div>
-                    <div class="mt-3 h-2 bg-gray-800 rounded-full overflow-hidden">
-                        <div id="progressFill" class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500" style="width: 62%;"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<article class="pg" data-id="R3">
+  <p class="k">Journey</p><h2>Your Digital Journey</h2><div class="bar"></div>
+  <div class="st"><b>01</b><span>Learn</span></div><div class="st"><b>02</b><span>Practice</span></div><div class="st"><b>03</b><span>Create</span></div><div class="st"><b>04</b><span>Teach</span></div><div class="st"><b>05</b><span>Lead</span></div>
+</article>
 
-        <!-- Live Status Bar -->
-        <section class="py-6 border-b border-white/5">
-            <div class="container-custom">
-                <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-center">
-                    <div>
-                        <div class="stat-number" id="totalStudents">54+</div>
-                        <p class="text-gray-400 text-xs uppercase tracking-wider">Total Students</p>
-                    </div>
-                    <div>
-                        <div class="stat-number" id="activeStudents">54</div>
-                        <p class="text-gray-400 text-xs uppercase tracking-wider">Active Learners</p>
-                    </div>
-                    <div>
-                        <div class="stat-number-green" id="certifiedStudents">21</div>
-                        <p class="text-gray-400 text-xs uppercase tracking-wider">Certified</p>
-                    </div>
-                    <div>
-                        <div class="stat-number" id="completionRate">100%</div>
-                        <p class="text-gray-400 text-xs uppercase tracking-wider">Completion Rate</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></span>
-                        <span class="text-sm text-gray-300">2026 Class Completed ✅</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<article class="pg" data-id="L3">
+  <p class="k">Certificate</p><h2>A certificate you can prove</h2><div class="bar"></div>
+  <img data-zoom src="https://i.postimg.cc/fLGQ5Tb9/i-MENA-Learn-Certificate-Template.png" alt="iMENA Learn certificate" loading="lazy">
+  <p>Each certificate has the graduate's full name, a unique ID and a QR code for verification.</p>
+  <div class="tags"><span>QR verified</span><span>Unique ID</span><span>Official iMENA seal</span></div>
+</article>
 
-        <!-- Why Join Section -->
-        <section id="why-join" class="py-20">
-            <div class="container-custom">
-                <div class="text-center mb-14 reveal">
-                    <p class="text-primary text-sm font-bold uppercase tracking-wider">✦ Why iMENA Learn ✦</p>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Why Choose iMENA Learn?</h2>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="glass-card p-6 text-center reveal">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-brain text-primary text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">AI & Innovation</h3>
-                        <p class="text-gray-300 text-sm">Learn the skills behind today's smartest AI systems and automation workflows.</p>
-                    </div>
-                    <div class="glass-card p-6 text-center reveal">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-palette text-secondary text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Creative Design</h3>
-                        <p class="text-gray-300 text-sm">Create beautiful designs, edit photos, and make videos with premium features.</p>
-                    </div>
-                    <div class="glass-card p-6 text-center reveal">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-chalkboard text-accent text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Google Classroom</h3>
-                        <p class="text-gray-300 text-sm">Teach online, connect with students, and manage your classroom from anywhere.</p>
-                    </div>
-                    <div class="glass-card p-6 text-center reveal">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-mobile-alt text-primary text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Phone Skills</h3>
-                        <p class="text-gray-300 text-sm">Discover useful phone features that improve teaching and learning.</p>
-                    </div>
-                    <div class="glass-card p-6 text-center reveal">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-users text-secondary text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Learn from Expert</h3>
-                        <p class="text-gray-300 text-sm">Learn from Jean Chrisostom, a student teacher dedicated to helping others grow through technology.</p>
-                    </div>
-                    <div class="glass-card p-6 text-center reveal">
-                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-certificate text-green-400 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Certification</h3>
-                        <p class="text-gray-300 text-sm">Complete the course and earn a certificate that boosts your professional profile.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<article class="pg" data-id="R4">
+  <p class="k">Audience</p><h2>Who Is iMENA Learn For?</h2><div class="bar"></div>
+  <div class="li"><i></i>Student Teachers</div><div class="li"><i></i>Students</div><div class="li"><i></i>Youth</div><div class="li"><i></i>Future Educators</div>
+  <p class="note">No previous experience required.</p>
+</article>
 
-        <!-- Program Roadmap -->
-        <section id="program" class="py-20 bg-gradient-to-b from-transparent to-primary/5">
-            <div class="container-custom">
-                <div class="text-center mb-12 reveal">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white">What You'll Learn in 4 Weeks</h2>
-                    <p class="text-gray-300 text-lg mt-3">Monday-Friday • 10 AM - 1 PM</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-5">
-                    <div class="glass-card p-5 reveal">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">1</div>
-                            <h3 class="text-lg font-bold text-white">Week 1: Digital Foundations ✅</h3>
-                        </div>
-                        <p class="text-gray-300 text-sm ml-13">Smartphone basics, internet essentials, digital safety, and productivity tools.</p>
-                    </div>
-                    <div class="glass-card p-5 reveal">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">2</div>
-                            <h3 class="text-lg font-bold text-white">Week 2: AI & Smart Tools ✅</h3>
-                        </div>
-                        <p class="text-gray-300 text-sm ml-13">Introduction to AI, machine learning, prompting, Google Maps, and practical AI tools.</p>
-                    </div>
-                    <div class="glass-card p-5 reveal">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-500 flex items-center justify-center text-white font-bold">3</div>
-                            <h3 class="text-lg font-bold text-green-400">Week 3: Google Workspace ✅</h3>
-                        </div>
-                        <p class="text-gray-300 text-sm ml-13">Google Drive, Docs, Forms, Classroom, Calendar, Keep, and Gmail mastery.</p>
-                    </div>
-                    <div class="glass-card p-5 reveal">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">4</div>
-                            <h3 class="text-lg font-bold text-white">Week 4: Canva & Certification ✅</h3>
-                        </div>
-                        <p class="text-gray-300 text-sm ml-13">Design mastery with Canva, presentations, and final certification project.</p>
-                    </div>
-                </div>
+<article class="pg sh" data-id="L4">
+  <p class="k">Graduation 2026</p><h2>Proud moments</h2><div class="bar"></div>
+  <div class="g2">
+    <div><img data-zoom src="https://i.postimg.cc/zGK45060/IMG-20260824-WA0022.jpg" alt="IZERE Kevine" loading="lazy"><h3>IZERE Kevine</h3><p>RAMBURA Garçon</p></div>
+    <div><img data-zoom src="https://i.postimg.cc/htPbyL6N/DSCPDC-0001-BURST20260816172003784-COVER.jpg" alt="IRADUKUNDA Sylvina" loading="lazy"><h3>IRADUKUNDA Sylvina</h3><p>G.S Gahanga</p></div>
+    <div><img data-zoom src="https://i.postimg.cc/t4CtS3w3/DSCPDC-0002-BURST20260824161037641-COVER.jpg" alt="HAGENIMANA Leonce" loading="lazy"><h3>HAGENIMANA Leonce</h3><p>St. Mary High School Kiruhura</p></div>
+    <div><img data-zoom src="https://i.postimg.cc/0ycZPWDB/20260816-142937-JPG.jpg" alt="MUHIRWA Jacques" loading="lazy"><h3>MUHIRWA Jacques</h3><p>St. Mary High School Kiruhura</p></div>
+  </div>
+</article>
 
-                <div class="mt-10 glass-premium p-6 rounded-2xl reveal">
-                    <div class="flex items-center justify-between mb-4">
-                        <h4 class="text-white font-bold">Program Progress</h4>
-                        <span class="text-sm text-green-400">Complete ✅</span>
-                    </div>
-                    <div class="h-3 bg-gray-800 rounded-full overflow-hidden">
-                        <div class="h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transition-all duration-1000" style="width: 100%;"></div>
-                    </div>
-                    <div class="flex items-center justify-between mt-2 text-xs text-gray-400">
-                        <span>✅ Week 1 Complete</span>
-                        <span>✅ Week 2 Complete</span>
-                        <span>✅ Week 3 Complete</span>
-                        <span>✅ Week 4 Complete</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<article class="pg" data-id="R5">
+  <p class="k">Method</p><h2>How We Learn</h2><div class="bar"></div>
+  <div class="li"><i></i>Simple lessons</div><div class="li"><i></i>Real practice</div><div class="li"><i></i>Practical activities</div><div class="li"><i></i>Digital tools</div><div class="li"><i></i>Teacher-focused learning</div>
+</article>
 
-        <!-- ============================================ -->
-        <!-- GRADUATES - Honor Roll                        -->
-        <!-- ============================================ -->
-        <section id="students" class="py-20">
-            <div class="container-custom">
-                <div class="text-center mb-12 reveal">
-                    <p class="text-primary text-sm font-bold uppercase tracking-wider">✦ Honor Roll ✦</p>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Our 2026 Graduates</h2>
-                    <p class="text-gray-300 mt-2 max-w-2xl mx-auto">We are proud to recognize the following educators who have successfully completed the iMENA Learn program and are now equipped to lead Rwanda's digital transformation in education.</p>
-                    <div class="inline-block mt-4 px-5 py-2 rounded-full bg-green-500/10 border border-green-500/20">
-                        <span class="text-green-400 text-sm font-bold">🎓 54 Active learners • 21 Already Certified</span>
-                    </div>
-                </div>
+<article class="pg" data-id="L5">
+  <p class="k">Testimonials</p><h2>What graduates say</h2><div class="bar"></div>
+  <blockquote>"Before iMENA Learn I used my phone only for calls and texts. Now I plan lessons with AI and use it responsibly."<cite>NISHIMWE Irasubiza Claudine, TTC Muhanga</cite></blockquote>
+  <blockquote>"Now I can use Canva to make invitations, presentations, and to edit images and videos."<cite>MUHIRWA Jacques, St. Mary High School Kiruhura</cite></blockquote>
+  <blockquote>"Now I can make advanced presentations with AI."<cite>IRADUKUNDA Sylvine, GS Gahanga</cite></blockquote>
+</article>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                    <!-- Full list of 54 students with certification badge -->
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Ikuzwe Pacifique</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">L</div>
-                        <p class="text-white text-xs font-medium">ISHIMWE Thierry</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">K</div>
-                        <p class="text-white text-xs font-medium">Kirezi Mutabazi Jehovanis</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Nshimiyimana Mechaques</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Iradukunda Slyivine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Niyitegeka Jean De Dieu</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Iryivuze Azarias</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Ndayisimiye Daniel</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">C</div>
-                        <p class="text-white text-xs font-medium">Chance Uwamahoro</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Icyizere Aime Fabrice</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Ntirenganya Olivier</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">A</div>
-                        <p class="text-white text-xs font-medium">Ally Marc Nuru</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Izerimana Geoffrey</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">M</div>
-                        <p class="text-white text-xs font-medium">Mugisha Pacifique</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Niwebasa Belise</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Niyomungeri Elvis</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">B</div>
-                        <p class="text-white text-xs font-medium">Byiringiro Merci</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">G</div>
-                        <p class="text-white text-xs font-medium">Gisubizo Levish</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Iradukunda Vestine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Ngabonziza Pacifique</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">Y</div>
-                        <p class="text-white text-xs font-medium">Yubahwe Jules</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">A</div>
-                        <p class="text-white text-xs font-medium">Abarikumwe Ernest</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">E</div>
-                        <p class="text-white text-xs font-medium">Elimogene Himbazayehova</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">H</div>
-                        <p class="text-white text-xs font-medium">Himbazayehova Elimogene</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Iradukunda Martin</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">B</div>
-                        <p class="text-white text-xs font-medium">Byiringiro Samuel</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Niyokwizerwa Jean Claude</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">M</div>
-                        <p class="text-white text-xs font-medium">Manzi Type Herve</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">H</div>
-                        <p class="text-white text-xs font-medium">Habumuremyi Aristide</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Ntakirutimana Goodman</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Ihirwe Esther</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Niyibigira Theoneste</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">U</div>
-                        <p class="text-white text-xs font-medium">Uwurukundo Jean Yves</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">F</div>
-                        <p class="text-white text-xs font-medium">Furaha Marie Ernestine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Niyogisubizo Fabien Jean Damascene</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">H</div>
-                        <p class="text-white text-xs font-medium">Hagenimana Leonce</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Nizeyimana Emille</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Irasubiza Nishimwe Claudine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Irabizi Shukuran</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">M</div>
-                        <p class="text-white text-xs font-medium">Mbabazi Gad</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Irasubiza Gihozo Sandra</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Niyitugize Charte</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Ineza Crédule</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">U</div>
-                        <p class="text-white text-xs font-medium">Umuvugizi Emelly</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Isimbi Kevine</p>
-                        <span class="text-[8px] text-green-400">Ongoing</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">N</div>
-                        <p class="text-white text-xs font-medium">Niyogisubizo Fabien Jean Damascene</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Izere Kevine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">M</div>
-                        <p class="text-white text-xs font-medium">Muhirwa Jacques</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">G</div>
-                        <p class="text-white text-xs font-medium">Gisingizo Celine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">G</div>
-                        <p class="text-white text-xs font-medium">Gisingizo Celine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">G</div>
-                        <p class="text-white text-xs font-medium">Gisingizo Celine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary/30 to-accent/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Irasubiza Nishimwe Claudine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500/30 to-green-400/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">I</div>
-                        <p class="text-white text-xs font-medium">Irasubiza Nishimwe Claudine</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                    <div class="glass-card p-3 text-center student-grid-item reveal hover:border-green-500/50">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center text-white font-bold text-sm mx-auto mb-1">U</div>
-                        <p class="text-white text-xs font-medium">Umuhoza Divinah</p>
-                        <span class="text-[8px] text-green-400">✓ Certified</span>
-                    </div>
-                </div>
+<article class="pg" data-id="R6">
+  <p class="k">Outcomes</p><h2>From Learning to Creating</h2><div class="bar"></div>
+  <div class="li"><i></i>Create digital materials</div><div class="li"><i></i>Use AI responsibly</div><div class="li"><i></i>Design educational content</div><div class="li"><i></i>Use online learning platforms</div><div class="li"><i></i>Teach with technology</div>
+</article>
 
-                <div class="text-center mt-8">
-                    <p class="text-green-400 text-sm">🎓 All 21 students are now certified and ready to lead digital transformation in Rwandan classrooms</p>
-                    <p class="text-gray-400 text-xs mt-2">iMENA Learn — Building Rwanda's digitally empowered educators</p>
-                </div>
-            </div>
-        </section>
+<article class="pg" data-id="L6">
+  <p class="k">FAQ</p><h2>Common questions</h2><div class="bar"></div>
+  <details><summary>When does the next camp start?</summary><p>Contact us on WhatsApp for the next start date.</p></details>
+  <details><summary>Do I need a computer?</summary><p>No. A smartphone is enough.</p></details>
+  <details><summary>How do I pay?</summary><p>Message us on WhatsApp at +250 796 717 230 for payment options and installment plans.</p></details>
+  <details><summary>Who can join?</summary><p>Student teachers, university students, youth and professionals. No experience needed.</p></details>
+  <details><summary>Will I get a certificate?</summary><p>Yes. You get a verified certificate with a unique ID and QR code.</p></details>
+</article>
 
-        <!-- ============================================ -->
-        <!-- CERTIFICATES & GALLERY - LARGE FORMAT        -->
-        <!-- ============================================ -->
-        <section id="certificates" class="py-20 bg-gradient-to-b from-transparent to-green-500/5">
-            <div class="container-custom">
-                <div class="text-center mb-12 reveal">
-                    <p class="text-green-400 text-sm font-bold uppercase tracking-wider">✦ Our Standards ✦</p>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-2">Excellence in Certification</h2>
-                    <p class="text-gray-300 mt-2 max-w-2xl mx-auto">iMENA Learn certificate is more than a document—it represents demonstrated digital competence.</p>
-                </div>
+<article class="pg" data-id="R7">
+  <p class="k">Join the next cohort</p><h2>Start Your Digital Journey</h2>
+  <div class="tri" style="font-size:.95em"><b>Learn Today.</b><b>Teach Tomorrow.</b><b>Lead Tomorrow.</b></div>
+  <form id="f" class="fm">
+    <input id="n" placeholder="Full names *" required><input id="p" type="tel" placeholder="Phone number *" required>
+    <input id="e" type="email" placeholder="Email address *" required>
+    <select id="y" required><option value="">Year of study *</option><option>Year 1</option><option>Year 2</option><option>Year 3</option><option>Graduate</option><option>Not a student</option></select>
+    <input id="a" class="full" placeholder="Home address *" required>
+    <select id="l" class="full" required><option value="">What do you want to learn most? *</option><option>Use of AI in education</option><option>Editing photos and videos</option><option>ICT for beginners</option><option>Phone skills for teachers</option><option>Google Classroom and online teaching</option><option>Everything</option></select>
+    <textarea id="g" class="full" rows="2" placeholder="What do you hope to achieve?"></textarea>
+    <button class="btn full" type="submit">Register</button>
+  </form>
+</article>
 
-                <!-- Certificate Template Showcase - FULL WIDTH -->
-                <div class="glass-premium p-6 md:p-10 rounded-2xl mb-12 reveal">
-                    <div class="flex flex-col md:flex-row items-center gap-8">
-                        <div class="flex-1">
-                            <span class="inline-block px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-xs font-bold tracking-wider mb-3">iMENA Learn Official Certificate</span>
-                            <h3 class="text-2xl md:text-3xl font-bold text-white">iMENA Learn Certificate of Completion</h3>
-                            <p class="text-gray-300 mt-3 leading-relaxed">Our certificates are designed to reflect the high standards of the iMENA ecosystem. Each certificate features a <strong class="text-white">unique registration number</strong>, the <strong class="text-white">graduate's full name</strong>, and a <strong class="text-white">verifiable QR code</strong> that links directly to our verification portal — ensuring authenticity and international recognition.</p>
-                            <div class="flex flex-wrap gap-3 mt-5">
-                                <span class="px-3 py-1 bg-green-500/20 rounded-full text-xs font-semibold text-green-400">✓ QR Code Verified</span>
-                                <span class="px-3 py-1 bg-primary/20 rounded-full text-xs font-semibold text-primary">✓ Unique Registration ID</span>
-                                <span class="px-3 py-1 bg-secondary/20 rounded-full text-xs font-semibold text-secondary">✓ Official iMENA Seal</span>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-full md:w-2/3 lg:w-3/4">
-                            <img src="https://i.postimg.cc/fLGQ5Tb9/i-MENA-Learn-Certificate-Template.png" 
-                                 alt="iMENA Learn Certificate Template" 
-                                 class="rounded-xl shadow-2xl border border-white/10 w-full hover:scale-105 transition-transform duration-300">
-                        </div>
-                    </div>
-                </div>
+<article class="pg ct" data-id="L7">
+  <p class="k">Contact</p><h2 style="color:var(--ink)">iMENA Learn</h2><div class="bar"></div>
+  <p>Practical digital skills training for future teachers in Rwanda. Learn. Create. Teach. Lead.</p>
+  <a href="mailto:imenahub.rw@gmail.com">imenahub.rw@gmail.com</a>
+  <a href="https://wa.me/250796717230" target="_blank" rel="noopener">+250 796 717 230 (WhatsApp)</a>
+  <span>Muhanga, Rwanda</span>
+  <span><a href="https://www.instagram.com/blad.rw/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/tuyisengejeanchrisostom" target="_blank" rel="noopener">Facebook</a></span>
+  <div class="dev">Developed by <a href="https://imena-hub.vercel.app" target="_blank" rel="noopener">iMENA Hub</a><br>© 2026 iMENA Learn. All rights reserved.</div>
+</article>
 
-                <!-- Graduation Gallery - LARGE FORMAT -->
-                <div class="mb-12 reveal">
-                    <div class="text-center mb-8">
-                        <h3 class="text-3xl md:text-4xl font-bold text-white">✦ Graduation Ceremony ✦</h3>
-                        <p class="text-gray-300 text-lg">Celebrating the achievements of the iMENA Learn 2026 cohort — a growing community of learners, educators, and digital enthusiasts building practical skills for the modern world.</p>
-                    </div>
+</div>
 
-                    <!-- Lightbox Overlay -->
-                    <div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
-                        <span class="lightbox-close" onclick="event.stopPropagation(); closeLightbox();">&times;</span>
-                        <img id="lightboxImage" src="" alt="Full view">
-                    </div>
+<script>
+/* ===== Lightbox ===== */
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi');
+document.addEventListener('click',e=>{const i=e.target.closest&&e.target.closest('img[data-zoom]');if(i){lbi.src=i.src;lb.classList.add('on')}});
+lb.addEventListener('click',()=>lb.classList.remove('on'));
+addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
 
-                    <!-- Gallery Grid - 2 columns, full size images -->
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Photo 1: Certificate Presentation -->
-                        <div class="glass-card p-4 hover:border-green-500/50 transition-all duration-300 group relative cursor-pointer" onclick="openLightbox('https://i.postimg.cc/sDPw0DXg/20260816-142602-JPG.jpg')">
-                            <img src="https://i.postimg.cc/zGK45060/IMG-20260824-WA0022.jpg" 
-                                 alt="Certificate Presentation Ceremony" 
-                                 class="gallery-img">
-                            <div class="absolute bottom-6 right-6 bg-black/70 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fas fa-expand text-white text-base"></i>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-white font-bold text-lg">🏅IZERE Kevine - RAMBURA Garçon</p>
-                                <p class="text-gray-400 text-sm">IZERE Kevine from  RAMBURA Garçon receiving her official iMENA Learn certificate during the 2026 graduation ceremony. The certificate recognizes her successful completion of four weeks of practical training in digital skills, AI, productivity tools, and modern technology.</p>
-                            </div>
-                        </div>
+/* ===== Registration: save to Google Sheets, then open WhatsApp ===== */
+const SHEET='https://script.google.com/macros/s/AKfycbz2SQL9NHlpxdWxA5Fr0_xPJOJSrnEvUu9T78-l4jb3Nl329SCp9swkEiM2yxl-UE4Apw/exec';
+document.getElementById('f').addEventListener('submit',async ev=>{
+  ev.preventDefault();
+  const v=i=>document.getElementById(i).value.trim();
+  const d={timestamp:new Date().toISOString(),fullname:v('n'),phone:v('p'),email:v('e'),year:v('y'),address:v('a'),ictChallenge:v('l'),improvementGoal:v('g'),regNum:'REG-'+new Date().getFullYear()+'-'+Math.floor(Math.random()*1000).toString().padStart(3,'0')};
+  try{await fetch(SHEET,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})}catch(e){}
+  const m=`iMENA Learn registration (${d.regNum})\nName: ${d.fullname}\nPhone: ${d.phone}\nEmail: ${d.email}\nYear: ${d.year}\nAddress: ${d.address}\nWants to learn: ${d.ictChallenge}\nGoal: ${d.improvementGoal}`;
+  window.open('https://wa.me/250796717230?text='+encodeURIComponent(m),'_blank');
+  ev.target.reset();
+});
 
-                        <!-- Photo 2: Group Photo -->
-                        <div class="glass-card p-4 hover:border-green-500/50 transition-all duration-300 group relative cursor-pointer" onclick="openLightbox('https://i.postimg.cc/htPbyL6N/DSCPDC-0001-BURST20260816172003784-COVER.jpg')">
-                            <img src="https://i.postimg.cc/htPbyL6N/DSCPDC-0001-BURST20260816172003784-COVER.jpg" 
-                                 alt="Cohort 2026 Group Photo" 
-                                 class="gallery-img">
-                            <div class="absolute bottom-6 right-6 bg-black/70 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fas fa-expand text-white text-base"></i>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-white font-bold text-lg">🏅 IRADUKUNDA Sylvina - G.S Gahanga</p>
-                                <p class="text-gray-400 text-sm">IRADUKUNDA Sylvina of G.S. Gahanga receiving her official iMENA Learn certificate. A proud moment from the 2026 graduation ceremony, celebrating the achievement of 54 graduates who completed the program and strengthened their skills in AI, Google Workspace, Canva, and modern digital tools.</p>
-                            </div>
-                        </div>
+/* =====================================================================
+   INTERACTIVE 3D DIGITAL BOOK  (one Three.js scene + HTML pages)
+   - scroll position = page-turn progress (scroll up reverses it)
+   - the HTML pages sit in a CSS 3D layer that uses the same perspective,
+     angle and pivot (the spine) as the WebGL book, so they turn together
+   ===================================================================== */
+(function () {
+  'use strict';
+  const $ = s => document.querySelector(s);
+  const cv = $('#bg'), stage = $('#stage'), b3d = $('#b3d'), src = $('#src'), rail = $('#rail'), track = $('#track'), curEl = $('#cur'), totEl = $('#tot');
+  const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const PW = 7, FOV = 40, CAM_Z = 12, STEP = .85, ZS = .02; // STEP = screen heights of scrolling per page turn
+  const clamp = (x, a, b) => Math.min(b, Math.max(a, x)), ease = x => x * x * (3 - 2 * x);
+  const ORDER = []; for (let i = 0; i < 8; i++) ORDER.push('R' + i, 'L' + i);
 
-                        <!-- Photo 3: Graduates with Certificates -->
-                        <div class="glass-card p-4 hover:border-green-500/50 transition-all duration-300 group relative cursor-pointer" onclick="openLightbox('https://i.postimg.cc/t4CtS3w3/DSCPDC-0002-BURST20260824161037641-COVER.jpg')">
-                            <img src="https://i.postimg.cc/t4CtS3w3/DSCPDC-0002-BURST20260824161037641-COVER.jpg" 
-                                 alt="Graduates with Certificates" 
-                                 class="gallery-img">
-                            <div class="absolute bottom-6 right-6 bg-black/70 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fas fa-expand text-white text-base"></i>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-white font-bold text-lg">🏅 HAGENIMANA Leonce - St. Mary High School Kiruhura</p>
-                                <p class="text-gray-400 text-sm">HAGENIMANA Leonce, an MPG student at St. Mary High School Kiruhura, proudly receiving his iMENA Learn certificate after completing four weeks of practical digital skills training in AI, Google Workspace, Canva, and modern technology.</p>
-                            </div>
-                        </div>
+  let PH = 9.4, BW = 14.9, BH = 10.3, N = 8, FLIPS = 7, RINGS = 19, TW = 768, TH = 1031;
+  let portrait = false, ppu = 100, fit = 1, baseX = 0, fs = 20, stepPx = 800, lastW = 0, lastH = 0, rt = 0, gl = true;
+  let R, S, C, book, gold, cyan, rightMat, leftMat, coverMat, leftEl = null, sheets = [];
+  const st = { pos: 0, vpos: 0, lastY: scrollY, lastEvt: 0, cur: '', dot: -1 };
+  const K = { rz: { x: 0, v: 0 }, rx: { x: 0, v: 0 }, py: { x: 0, v: 0 }, pz: { x: 0, v: 0 } }; // spring channels = physical inertia
+  const SPR_K = 55, SPR_C = 7.5;
 
-                        <!-- Photo 4: Celebration and Joy -->
-                        <div class="glass-card p-4 hover:border-green-500/50 transition-all duration-300 group relative cursor-pointer" onclick="openLightbox('https://i.postimg.cc/0ycZPWDB/20260816-142937-JPG.jpg')">
-                            <img src="https://i.postimg.cc/0ycZPWDB/20260816-142937-JPG.jpg" 
-                                 alt="Celebration and Joy" 
-                                 class="gallery-img">
-                            <div class="absolute bottom-6 right-6 bg-black/70 p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                                <i class="fas fa-expand text-white text-base"></i>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-white font-bold text-lg">🏅 MUHIRWA Jacques - St. Mary High School Kiruhura</p>
-                                <p class="text-gray-400 text-sm">MUHIRWA Jacques an PCB student from St. Mary High School Kiruhura receiving his official iMENA Learn certificate during the 2026 graduation ceremony. The certificate recognizes his successful completion of four weeks of practical training in digital skills, AI, productivity tools, and modern technology.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  /* ---------- scene ---------- */
+  function initBook() {
+    R = new THREE.WebGLRenderer({ canvas: cv, antialias: true, powerPreference: 'high-performance' });
+    R.outputEncoding = THREE.sRGBEncoding; R.toneMapping = THREE.ACESFilmicToneMapping; R.toneMappingExposure = 1.05;
+    R.setClearColor(0x050813);
+    S = new THREE.Scene(); C = new THREE.PerspectiveCamera(FOV, 1, .1, 60); C.position.set(0, 0, CAM_Z);
+    try { // tiny procedural studio -> soft reflections on cover and rings
+      const pm = new THREE.PMREMGenerator(R), e = new THREE.Scene(); e.background = new THREE.Color(0x0b1430);
+      const add = (c, x, y, z, w, h) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: c, side: THREE.DoubleSide })); m.position.set(x, y, z); m.lookAt(0, 0, 0); e.add(m); };
+      add(0xffffff, -6, 8, 6, 8, 5); add(0x00e5ff, 8, -2, 5, 5, 8); add(0xffb347, 2, -8, 6, 8, 3); add(0x2a4fb0, 0, 0, -8, 14, 10);
+      S.environment = pm.fromScene(e, .05).texture; pm.dispose();
+    } catch (err) {}
+    createLighting();
+    const g = document.createElement('canvas'); g.width = g.height = 256; const x = g.getContext('2d'), gr = x.createRadialGradient(128, 128, 0, 128, 128, 128);
+    gr.addColorStop(0, 'rgba(0,150,200,.2)'); gr.addColorStop(1, 'rgba(5,8,19,0)'); x.fillStyle = gr; x.fillRect(0, 0, 256, 256);
+    const glow = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(g), transparent: true, depthWrite: false }));
+    glow.position.z = -4; S.add(glow);
+  }
 
-                <!-- Key Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-                    <div class="glass-card p-5 text-center">
-                        <div class="text-4xl font-black text-green-400">21</div>
-                        <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Graduates Certified</p>
-                    </div>
-                    <div class="glass-card p-5 text-center">
-                        <div class="text-4xl font-black text-primary">93%</div>
-                        <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Completion Rate</p>
-                    </div>
-                    <div class="glass-card p-5 text-center">
-                        <div class="text-4xl font-black text-secondary">4</div>
-                        <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Weeks of Training</p>
-                    </div>
-                    <div class="glass-card p-5 text-center">
-                        <div class="text-4xl font-black text-accent">11+</div>
-                        <p class="text-gray-400 text-xs uppercase tracking-wider mt-1">Digital Tools Mastered</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  function createLighting() {
+    S.add(new THREE.AmbientLight(0x9fb4e8, .45));
+    const key = new THREE.DirectionalLight(0xffffff, .95); key.position.set(-3, 6, 10); S.add(key);
+    const rim = new THREE.DirectionalLight(0x4f7dff, .45); rim.position.set(6, 2, -4); S.add(rim);
+    cyan = new THREE.PointLight(0x00e5ff, .8, 30); cyan.position.set(-9, -3, 5); S.add(cyan);
+    gold = new THREE.PointLight(0xffb347, .8, 30); gold.position.set(8, 4, 5); S.add(gold);
+  }
 
-        <!-- Instructor Section -->
-        <section class="py-20">
-            <div class="container-custom">
-                <div class="glass-premium p-8 md:p-12 reveal">
-                    <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-                        <div class="flex-shrink-0">
-                            <img src="https://i.postimg.cc/vZh5WXTm/chrisostom.jpg" alt="TUYISENGE Jean Chrisostom" class="instructor-img w-40 h-40 md:w-48 md:h-48">
-                        </div>
-                        <div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-white">TUYISENGE Jean Chrisostom</h3>
-                            <p class="text-primary text-lg mt-1">Founder & Lead Trainer</p>
-                            <p class="text-gray-300 mt-4 leading-relaxed">A student teacher at TTC Muhanga studying Language Education and a full-stack developer focused on EdTech. Chrisostom is dedicated to helping others grow through technology.</p>
-                            <div class="flex flex-wrap gap-3 mt-5 justify-center md:justify-start">
-                                <span class="px-3 py-1 bg-primary/20 rounded-full text-xs font-semibold">Founder & Owner</span>
-                                <span class="px-3 py-1 bg-secondary/20 rounded-full text-xs font-semibold">EdTech Specialist</span>
-                                <span class="px-3 py-1 bg-accent/20 rounded-full text-xs font-semibold">Web Developer</span>
-                                <span class="px-3 py-1 bg-green-500/20 rounded-full text-xs font-semibold text-green-400">Future Teachers Trainer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  /* ---------- layout: book size from window, FOV and book dimensions ---------- */
+  /* CHANGED: multipliers increased so the book fills the full page on all devices */
+  function layout(keep) {
+    const w = innerWidth, h = innerHeight;
+    portrait = w < 780 || w / h < .95;
+    ppu = h / (2 * Math.tan(FOV * Math.PI / 360) * CAM_Z);       // CSS px per world unit at the book plane
+    const vw = w / ppu, vh = h / ppu;
+    if (!keep) { N = portrait ? 16 : 8; FLIPS = N - 1; }
+    if (portrait) { // single readable page
+      const f0 = vw * 1.00 / PW;
+      if (!keep) PH = clamp(vh * 0.98 / f0, 9.4, 16);
+      fit = Math.min(f0, vh * 1.00 / PH); baseX = -PW / 2 * fit; fs = PW * ppu / 24;
+    } else {        // two-page spread
+      if (!keep) PH = 9.4;
+      BW = PW * 2 + .9; fit = Math.min(vw / BW, vh / (PH + .9)) * 1.00; baseX = 0; fs = PW * ppu / 32;
+    }
+    if (!keep) { BH = PH + .9; TW = portrait ? 576 : 768; TH = Math.round(TW * PH / PW); RINGS = Math.round(PH / .5); }
+  }
 
-        <!-- Testimonials -->
-        <section class="py-20">
-            <div class="container-custom">
-                <div class="text-center mb-12 reveal">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white">What Our Students Say</h2>
-                    <p class="text-gray-300 mt-2">Real stories from real graduates</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="glass-card p-6 reveal">
-                        <i class="fas fa-quote-left text-green-400 text-2xl mb-3 opacity-50"></i>
-                        <p class="text-gray-300">"lBefore joining iMENA Learn I was using my phone for just calling and texting messages, but now I use it for planning lesson plans with AI and use AI responsibly."</p>
-                        <p class="text-primary font-bold mt-4">NISHIMWE IRASUBIZA Claudine - TTC MUHANGA</p>
-                    </div>
-                    <div class="glass-card p-6 reveal">
-                        <i class="fas fa-quote-left text-green-400 text-2xl mb-3 opacity-50"></i>
-                        <p class="text-gray-300">"Before iMENA Learn I didn’t knew hot to Use Canva to make invitations, presentations, edit images and videos,.. but now I know them!"</p>
-                        <p class="text-primary font-bold mt-4">MUHIRWA Jacques -St. Mary High School Kiruhura</p>
-                    </div>
-                    <div class="glass-card p-6 reveal">
-                        <i class="fas fa-quote-left text-green-400 text-2xl mb-3 opacity-50"></i>
-                        <p class="text-gray-300">"Before attending iMENA Learn I didn’t know how to  make best advanced Presentations, but now I can make best presenation with Ai."</p>
-                        <p class="text-primary font-bold mt-4">IRADUKUNDA Sylvine - GS GAHANGA</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  /* ---------- materials: clean paper, navy cover ---------- */
+  function paperTex(kind) {
+    const c = document.createElement('canvas'); c.width = TW; c.height = TH; const g = c.getContext('2d'), r = 28, right = kind !== 'L';
+    g.beginPath();
+    if (right) { g.moveTo(0, 0); g.lineTo(TW - r, 0); g.quadraticCurveTo(TW, 0, TW, r); g.lineTo(TW, TH - r); g.quadraticCurveTo(TW, TH, TW - r, TH); g.lineTo(0, TH); }
+    else { g.moveTo(r, 0); g.lineTo(TW, 0); g.lineTo(TW, TH); g.lineTo(r, TH); g.quadraticCurveTo(0, TH, 0, TH - r); g.lineTo(0, r); g.quadraticCurveTo(0, 0, r, 0); }
+    g.closePath(); g.clip();
+    if (kind === 'C') {
+      const gr = g.createLinearGradient(0, 0, TW, TH); gr.addColorStop(0, '#12315a'); gr.addColorStop(1, '#0B1A2E'); g.fillStyle = gr; g.fillRect(0, 0, TW, TH);
+      g.strokeStyle = 'rgba(255,179,71,.6)'; g.lineWidth = 3; g.strokeRect(TW * .09, TW * .09, TW * .86, TH - TW * .18);
+      g.strokeStyle = 'rgba(0,229,255,.28)'; g.lineWidth = 2; g.strokeRect(TW * .115, TW * .115, TW * .81, TH - TW * .23);
+    } else {
+      g.fillStyle = '#f4f1e6'; g.fillRect(0, 0, TW, TH);
+      for (let i = 0; i < 2400; i++) { g.fillStyle = 'rgba(90,80,60,' + (.02 + Math.random() * .035) + ')'; g.fillRect(Math.random() * TW, Math.random() * TH, 1 + Math.random() * 2, 1); }
+    }
+    const sg = g.createLinearGradient(right ? 0 : TW, 0, right ? TW * .22 : TW * .78, 0); // depth toward the spine
+    sg.addColorStop(0, 'rgba(10,20,45,.38)'); sg.addColorStop(1, 'rgba(10,20,45,0)'); g.fillStyle = sg; g.fillRect(0, 0, TW, TH);
+    const step = TH / RINGS; g.fillStyle = '#1b2236';
+    for (let k = 0; k < RINGS; k++) { g.beginPath(); g.arc(right ? 15 : TW - 15, (k + .5) * step, 7, 0, 7); g.fill(); }
+    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = Math.min(4, R.capabilities.getMaxAnisotropy()); return t;
+  }
+  function createMaterials() {
+    const m = (map, rough) => new THREE.MeshStandardMaterial({ map: map, roughness: rough, alphaTest: .4, envMapIntensity: .2 });
+    rightMat = m(paperTex('R'), .92); leftMat = m(paperTex('L'), .92); coverMat = m(paperTex('C'), .5); coverMat.envMapIntensity = .8;
+  }
 
-        <!-- Registration Form -->
-        <section id="register" class="py-20">
-            <div class="container-custom">
-                <div class="glass-premium p-8 md:p-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-2">🚀 Join Next Cohort</h2>
-                    <p class="text-center text-gray-300 mb-8">The next batch starts soon. Register now to secure your spot!</p>
-                    <form id="registrationForm" onsubmit="submitToGoogleSheets(event)">
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <input type="text" id="fullname" placeholder="Full Names *" required class="input-premium">
-                            <input type="tel" id="phone" placeholder="Phone Number *" required class="input-premium">
-                            <input type="email" id="email" placeholder="Email Address *" required class="input-premium">
-                            <select id="year" required class="input-premium">
-                                <option value="">Year of Study *</option>
-                                <option>Year 1</option>
-                                <option>Year 2</option>
-                                <option>Year 3</option>
-                                <option>Graduate</option>
-                                <option>Not a student</option>
-                            </select>
-                            <input type="text" id="address" placeholder="Home Address *" required class="input-premium md:col-span-2">
-                            <select id="ictChallenge" required class="input-premium md:col-span-2">
-                                <option value="">What do you want to learn most? *</option>
-                                <option>Use of AI in education</option>
-                                <option>Editing photos and videos</option>
-                                <option>ICT for beginners</option>
-                                <option>Phone skills for teachers</option>
-                                <option>Google Classroom and online teaching</option>
-                                <option>All of them — I want to learn everything</option>
-                            </select>
-                            <textarea id="improvementGoal" rows="3" placeholder="What do you hope to achieve from this camp?" class="input-premium md:col-span-2"></textarea>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <button type="submit" class="btn-success" id="submitBtn">
-                                <i class="fas fa-paper-plane mr-2"></i> Register Now →
-                            </button>
-                        </div>
-                    </form>
-                    
-                    <div id="formStatus" class="mt-4 text-center hidden"></div>
-                </div>
-            </div>
-        </section>
+  /* ---------- book body: cover, page thickness, gold spiral ---------- */
+  function createBook() {
+    book = new THREE.Group();
+    const w = portrait ? PW + .5 : BW, h = BH, r = .4, cx = portrait ? PW / 2 : 0, sh = new THREE.Shape();
+    sh.moveTo(-w / 2 + r, -h / 2); sh.lineTo(w / 2 - r, -h / 2); sh.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r); sh.lineTo(w / 2, h / 2 - r);
+    sh.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2); sh.lineTo(-w / 2 + r, h / 2); sh.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r);
+    sh.lineTo(-w / 2, -h / 2 + r); sh.quadraticCurveTo(-w / 2, -h / 2, -w / 2 + r, -h / 2);
+    const cover = new THREE.Mesh(new THREE.ExtrudeGeometry(sh, { depth: .2, bevelEnabled: true, bevelThickness: .07, bevelSize: .07, bevelSegments: 3, curveSegments: 8 }),
+      new THREE.MeshPhysicalMaterial({ color: 0x0B1A2E, roughness: .5, metalness: .15, clearcoat: .5, clearcoatRoughness: .4, envMapIntensity: .9 }));
+    cover.position.set(cx, 0, -.62); book.add(cover);
+    const edge = new THREE.MeshStandardMaterial({ color: 0xe2ded0, roughness: .95, envMapIntensity: .1 });
+    (portrait ? [1] : [-1, 1]).forEach(d => { const b = new THREE.Mesh(new THREE.BoxGeometry(PW - .04, PH - .06, .34), edge); b.position.set(d * PW / 2, 0, -.18); book.add(b); });
+    const rings = new THREE.InstancedMesh(new THREE.TorusGeometry(.24, .04, 10, 28), new THREE.MeshStandardMaterial({ color: 0xFFB347, metalness: .85, roughness: .3, envMapIntensity: 1.2 }), RINGS);
+    const o = new THREE.Object3D(), step = PH / RINGS;
+    for (let k = 0; k < RINGS; k++) { o.position.set(0, PH / 2 - (k + .5) * step, .07); o.rotation.set(1.15, 0, 0); o.scale.set(1.35, 1, 1); o.updateMatrix(); rings.setMatrixAt(k, o.matrix); }
+    book.add(rings);
+    const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'), gr = x.createRadialGradient(64, 64, 0, 64, 64, 64); // soft contact shadow
+    gr.addColorStop(0, 'rgba(0,0,0,.65)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gr; x.fillRect(0, 0, 128, 128);
+    const shadow = new THREE.Mesh(new THREE.PlaneGeometry(w * 1.3, h * 1.35), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthWrite: false }));
+    shadow.position.set(cx, 0, -.9); book.add(shadow); S.add(book);
+  }
 
-        <!-- FAQ -->
-        <section class="py-20">
-            <div class="container-custom">
-                <div class="text-center mb-12 reveal">
-                    <h2 class="text-4xl font-bold text-white">Frequently Asked Questions</h2>
-                    <p class="text-gray-300 mt-2">Everything you need to know</p>
-                </div>
-                <div class="max-w-3xl mx-auto space-y-4">
-                    <div class="glass-card">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
-                            <span class="font-semibold">📅 When does the next camp start?</span>
-                            <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="hidden px-6 pb-4 text-gray-300 text-sm border-t border-primary/20">The next batch starts in June 2026. Enroll now to secure your seat!</div>
-                    </div>
-                    <div class="glass-card">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
-                            <span class="font-semibold">💻 Do I need a computer?</span>
-                            <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="hidden px-6 pb-4 text-gray-300 text-sm border-t border-primary/20">No! A smartphone is enough. Most tools work perfectly on phones. We'll show you how.</div>
-                    </div>
-                    <div class="glass-card">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
-                            <span class="font-semibold">💰 How do I pay?</span>
-                            <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="hidden px-6 pb-4 text-gray-300 text-sm border-t border-primary/20">Contact us via WhatsApp at +250796717230 for payment options and installment plans. We're flexible!</div>
-                    </div>
-                    <div class="glass-card">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
-                            <span class="font-semibold">🎓 Who can join?</span>
-                            <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="hidden px-6 pb-4 text-gray-300 text-sm border-t border-primary/20">Anyone interested in digital skills! Student teachers, university students, youth, and professionals. No experience needed.</div>
-                    </div>
-                    <div class="glass-card">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center">
-                            <span class="font-semibold">🏆 Will I get a certificate?</span>
-                            <i class="fas fa-chevron-down transition-transform"></i>
-                        </button>
-                        <div class="hidden px-6 pb-4 text-gray-300 text-sm border-t border-green-500/20">Yes! Upon completion, you will receive a verified iMENA Learn certificate with a unique ID and QR code. <span class="text-green-400">🌱 Start your journey today!</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  /* ---------- pages: 3D sheet (front/back) + matching HTML sheet ---------- */
+  function createPageContent(face, id, isBack) {
+    const a = src.querySelector('[data-id="' + id + '"]'); if (!a) return;
+    a.classList.toggle('lp', isBack);
+    if (!a.querySelector('.foot')) { const f = document.createElement('div'); f.className = 'foot'; f.innerHTML = '<span>iMENA Learn</span><span>' + String(ORDER.indexOf(id) + 1).padStart(2, '0') + '</span>'; a.appendChild(f); }
+    face.appendChild(a);
+  }
 
-        <!-- Success Modal -->
-        <div id="successModal" class="fixed inset-0 bg-black/90 backdrop-blur-2xl z-50 hidden items-center justify-center p-4">
-            <div class="glass-premium rounded-3xl p-8 max-w-md w-full text-center">
-                <div class="w-24 h-24 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-5">
-                    <i class="fas fa-check-circle text-green-400 text-5xl"></i>
-                </div>
-                <h3 class="text-3xl font-bold text-white mb-2">🎉 Registration Successful!</h3>
-                <p class="text-gray-300">Your information has been saved!</p>
-                <p id="regNumber" class="text-green-400 font-bold text-xl mt-3">N0-2026-021</p>
-                <div class="mt-4 p-3 bg-gray-800 rounded-xl text-left">
-                    <p class="text-sm text-gray-300"><strong>📋 Next Steps:</strong></p>
-                    <ul class="text-sm text-gray-400 mt-2 space-y-1">
-                        <li>1️⃣ Complete payment to 0796717230 (TUYISENGE Jean Chrisostom)</li>
-                        <li>2️⃣ Send payment screenshot via WhatsApp</li>
-                        <li>3️⃣ Prepare for camp and activation</li>
-                    </ul>
-                </div>
-                <div class="mt-6 space-y-3">
-                    <a href="https://wa.me/250796717230" target="_blank" class="btn-success w-full block text-center">
-                        <i class="fab fa-whatsapp mr-2"></i> Join WhatsApp Community
-                    </a>
-                    <button id="closeModal" class="btn-outline w-full">Close</button>
-                </div>
-            </div>
-        </div>
+  function createPages() {
+    const fronts = portrait ? ORDER : ORDER.filter(x => x[0] === 'R');
+    sheets = [];
+    for (let i = 0; i < N; i++) {
+      const s = { f: -1, nf: 0, fo: -1, bo: -1 };
+      if (gl) {
+        s.gF = new THREE.PlaneGeometry(PW, PH, 18, 1).translate(PW / 2, 0, 0);
+        s.gB = new THREE.PlaneGeometry(PW, PH, 18, 1).rotateY(Math.PI).translate(PW / 2, 0, 0);
+        s.pv = new THREE.Group(); s.pv.add(new THREE.Mesh(s.gF, i === 0 ? coverMat : rightMat), new THREE.Mesh(s.gB, leftMat)); book.add(s.pv);
+      }
+      s.el = document.createElement('div'); s.el.className = 'sheet';
+      s.ff = document.createElement('div'); s.ff.className = 'face'; s.bf = document.createElement('div'); s.bf.className = 'face back';
+      createPageContent(s.ff, fronts[i], false);
+      if (!portrait && i < N - 1) createPageContent(s.bf, 'L' + (i + 1), true);
+      s.el.append(s.ff, s.bf); b3d.appendChild(s.el); sheets.push(s);
+    }
+    if (!portrait) { // inside-front-cover page under the turned sheets
+      if (gl) book.add(new THREE.Mesh(new THREE.PlaneGeometry(PW, PH).translate(-PW / 2, 0, 0), leftMat));
+      leftEl = document.createElement('div'); leftEl.className = 'lbase'; leftEl.style.transform = 'translateZ(' + (.03 * ppu) + 'px)'; leftEl.o = -1;
+      createPageContent(leftEl, 'L0', true); b3d.appendChild(leftEl);
+    }
+  }
 
-        <!-- Footer -->
-        <footer class="py-12 text-center border-t border-white/10">
-            <img src="https://i.postimg.cc/rmqp5jT3/IMENA-LOGO.png" alt="iMENA Learn" class="mx-auto mb-4" style="max-height: 45px;">
-            <p class="text-gray-400 text-sm">Learn. Create. Teach. Lead.</p>
-            
-            <div class="mt-3 inline-block px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10">
-                <span class="text-xs text-green-400 font-semibold tracking-wider">🌍 Part of the iMENA Hub Ecosystem</span>
-            </div>
-            
-            <div class="flex justify-center gap-6 mt-5">
-                <a href="https://www.instagram.com/blad.rw/" target="_blank" class="social-icon text-gray-500 hover:text-pink-500 transition duration-300" aria-label="Instagram">
-                    <i class="fab fa-instagram text-xl"></i>
-                </a>
-                <a href="https://www.facebook.com/tuyisengejeanchrisostom" target="_blank" class="social-icon text-gray-500 hover:text-blue-500 transition duration-300" aria-label="Facebook">
-                    <i class="fab fa-facebook text-xl"></i>
-                </a>
-                <a href="https://wa.me/250796717230" target="_blank" class="social-icon text-gray-500 hover:text-green-500 transition duration-300" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp text-xl"></i>
-                </a>
-                <a href="mailto:imenahub.rw@gmail.com" class="social-icon text-gray-500 hover:text-red-400 transition duration-300" aria-label="Email">
-                    <i class="fas fa-envelope text-xl"></i>
-                </a>
-                <a href="https://imenalearn.vercel.app" target="_blank" class="social-icon text-gray-500 hover:text-accent transition duration-300" aria-label="Website">
-                    <i class="fas fa-globe text-xl"></i>
-                </a>
-            </div>
-            
-            <p class="text-gray-500 text-xs mt-3">
-                📧 <a href="mailto:imenahub.rw@gmail.com" class="hover:text-green-400 transition">imenahub.rw@gmail.com</a>
-            </p>
-            
-            <p class="text-gray-500 text-xs mt-4">
-                © 2026 iMENA Learn — An <span class="text-green-400">iMENA Hub</span> Initiative. Empowering Rwanda's future educators with TUYISENGE Jean Chrisostom
-            </p>
-        </footer>
-    </div>
+  // soft resting arch + trailing curl while a sheet turns
+  function bendSheet(s, f) {
+    const curl = reduce ? 0 : .5 * Math.sin(f * Math.PI), arch = .07 * Math.cos(f * Math.PI);
+    [s.gF, s.gB].forEach(g => {
+      const p = g.attributes.position;
+      for (let j = 0; j < p.count; j++) { const u = clamp(p.getX(j) / PW, 0, 1); p.setZ(j, arch * Math.sin(u * Math.PI) - curl * u * u); }
+      p.needsUpdate = true; g.computeVertexNormals();
+    });
+  }
 
-    <script type="module">
-        import * as THREE from 'three';
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x05050A);
-        scene.fog = new THREE.FogExp2(0x05050A, 0.003);
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 28;
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        
-        const particleCount = 4000;
-        const particlesGeo = new THREE.BufferGeometry();
-        const positions = new Float32Array(particleCount * 3);
-        for (let i = 0; i < particleCount; i++) {
-            positions[i*3] = (Math.random() - 0.5) * 80;
-            positions[i*3+1] = (Math.random() - 0.5) * 60;
-            positions[i*3+2] = (Math.random() - 0.5) * 70 - 30;
-        }
-        particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const particlesMat = new THREE.PointsMaterial({ color: 0x10B981, size: 0.1, transparent: true, opacity: 0.3 });
-        const particles = new THREE.Points(particlesGeo, particlesMat);
-        scene.add(particles);
-        
-        function animate() {
-            requestAnimationFrame(animate);
-            particles.rotation.y += 0.002;
-            particles.rotation.x = Math.sin(Date.now() * 0.0005) * 0.1;
-            renderer.render(scene, camera);
-        }
-        animate();
-        
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-    </script>
+  /* ---------- build / rebuild (on first load and when the layout mode changes) ---------- */
+  function teardown() {
+    b3d.querySelectorAll('article').forEach(a => src.appendChild(a));
+    b3d.innerHTML = ''; leftEl = null; sheets = [];
+    if (book) { S.remove(book); book.traverse(o => { if (o.geometry) o.geometry.dispose(); }); book = null; }
+    [rightMat, leftMat, coverMat].forEach(m => { if (m) { if (m.map) m.map.dispose(); m.dispose(); } });
+  }
+  function applyCss() {
+    b3d.style.setProperty('--pw', PW * ppu + 'px'); b3d.style.setProperty('--ph', PH * ppu + 'px'); b3d.style.setProperty('--fs', fs + 'px');
+    stage.style.perspective = CAM_Z * ppu + 'px';
+  }
+  function sizeRenderer() {
+    R.setPixelRatio(Math.min(devicePixelRatio || 1, innerWidth < 700 ? 1.5 : 2));
+    R.setSize(innerWidth, innerHeight, false); C.aspect = innerWidth / innerHeight; C.updateProjectionMatrix();
+  }
+  function setupScroll() {
+    stepPx = STEP * innerHeight; track.style.height = (innerHeight + FLIPS * stepPx) + 'px'; track.innerHTML = '';
+    for (let i = 0; i <= FLIPS; i++) { const d = document.createElement('div'); d.className = 'snap'; d.style.top = i * stepPx + 'px'; track.appendChild(d); }
+    rail.innerHTML = '';
+    for (let k = 0; k < 8; k++) { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', 'Go to page ' + (k + 1)); b.onclick = () => goTo(portrait ? k * 2 : k); rail.appendChild(b); }
+    totEl.textContent = String(portrait ? 16 : 8).padStart(2, '0'); st.dot = -1; st.cur = '';
+  }
+  function goTo(p) { scrollTo({ top: p * stepPx, behavior: reduce ? 'auto' : 'smooth' }); }
+  function rebuild() {
+    const frac = FLIPS ? st.vpos / FLIPS : 0;
+    teardown(); layout(false); lastW = innerWidth; lastH = innerHeight;
+    if (gl) { sizeRenderer(); createMaterials(); createBook(); }
+    createPages(); applyCss(); setupScroll();
+    scrollTo({ top: frac * FLIPS * stepPx, behavior: 'instant' }); st.lastY = scrollY; st.pos = st.vpos = frac * FLIPS;
+  }
 
-    <script>
-        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyFGU0FXA1dYfmYXASPjGGnGQvwFqeSH0jLfKBIkmasY07ww7ZjFUZ0w9THmIOreM7D/exec';
-        
-        function showToast(message, isError = false) {
-            const toast = document.createElement('div');
-            toast.className = `toast-notification ${isError ? 'toast-error' : ''}`;
-            toast.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-triangle' : 'fa-check-circle'} mr-2"></i>${message}`;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 4000);
-        }
-        
-        async function submitToGoogleSheets(event) {
-            event.preventDefault();
-            
-            const fullname = document.getElementById('fullname').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const year = document.getElementById('year').value;
-            const address = document.getElementById('address').value.trim();
-            const ictChallenge = document.getElementById('ictChallenge').value;
-            const improvementGoal = document.getElementById('improvementGoal').value.trim();
-            
-            if (!fullname || !phone || !email || !year || !address || !ictChallenge) {
-                showToast('Please fill all required fields (*)', true);
-                return;
-            }
-            
-            if (!/^[0-9]{10}$/.test(phone.replace(/\D/g, ''))) {
-                showToast('Phone number must be 10 digits', true);
-                return;
-            }
-            
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                showToast('Please enter a valid email address', true);
-                return;
-            }
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span class="loading-spinner"></span> Saving...';
-            submitBtn.disabled = true;
-            
-            const regNum = 'REG-' + new Date().getFullYear() + '-' + Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-            document.getElementById('regNumber').textContent = regNum;
-            
-            const formData = {
-                timestamp: new Date().toISOString(),
-                fullname: fullname,
-                phone: phone,
-                email: email,
-                year: year,
-                address: address,
-                ictChallenge: ictChallenge,
-                improvementGoal: improvementGoal,
-                regNum: regNum
-            };
-            
-            try {
-                await fetch(GOOGLE_SHEETS_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-                console.log('Data sent successfully');
-            } catch (e) {
-                console.log('Fetch note:', e);
-            }
-            
-            const registrations = JSON.parse(localStorage.getItem('imena_registrations') || '[]');
-            registrations.push(formData);
-            localStorage.setItem('imena_registrations', JSON.stringify(registrations));
-            
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            
-            const modal = document.getElementById('successModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            
-            if (typeof canvasConfetti !== 'undefined') {
-                canvasConfetti({ particleCount: 300, spread: 150, origin: { y: 0.5 }, colors: ['#10B981', '#34D399', '#059669'] });
-            }
-            
-            document.getElementById('registrationForm').reset();
-            showToast('Registration saved successfully!');
-        }
-        
-        document.getElementById('closeModal').addEventListener('click', () => {
-            document.getElementById('successModal').classList.add('hidden');
-        });
-        
-        document.getElementById('successModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('successModal')) {
-                document.getElementById('successModal').classList.add('hidden');
-            }
-        });
-        
-        gsap.registerPlugin(ScrollTrigger);
-        document.querySelectorAll('.reveal').forEach(el => {
-            gsap.fromTo(el, { opacity: 0, y: 50 }, {
-                opacity: 1, y: 0, duration: 0.8,
-                scrollTrigger: { trigger: el, start: 'top 85%' }
-            });
-        });
-        
-        document.querySelectorAll('.faq-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                const icon = btn.querySelector('i');
-                content.classList.toggle('hidden');
-                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-            });
-        });
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-        
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            const nav = document.querySelector('nav .hidden.md\\:flex');
-            if (nav) {
-                nav.classList.toggle('hidden');
-                nav.classList.toggle('flex');
-                nav.classList.toggle('flex-col');
-                nav.classList.toggle('absolute');
-                nav.classList.toggle('top-full');
-                nav.classList.toggle('left-0');
-                nav.classList.toggle('w-full');
-                nav.classList.toggle('glass-premium');
-                nav.classList.toggle('p-4');
-            }
-        });
-        
-        // Live counter animation
-        let count = 247;
-        const target = 400;
-        const counterEl = document.getElementById('liveCounter');
-        const progressFill = document.getElementById('progressFill');
-        
-        if (counterEl && progressFill) {
-            setInterval(() => {
-                if (count < target) {
-                    count += Math.floor(Math.random() * 2) + 1;
-                    if (count > target) count = target;
-                    counterEl.textContent = count;
-                    progressFill.style.width = `${(count / target) * 100}%`;
-                }
-            }, 10000);
-        }
+  /* ---------- input ---------- */
+  function handleScroll() {
+    const dy = scrollY - st.lastY; st.lastY = scrollY; st.lastEvt = performance.now();
+    if (reduce) return;
+    const d = clamp(dy, -140, 140) / 140; // scroll velocity -> gentle impulse
+    K.rz.v += d * .03; K.rx.v -= d * .04; K.py.v += d * .35; K.pz.v += Math.abs(d) * .18;
+  }
+  function handleResize() {
+    clearTimeout(rt);
+    rt = setTimeout(() => {
+      if (innerWidth !== lastW || Math.abs(innerHeight - lastH) / lastH > .15) rebuild();
+      else { layout(true); if (gl) sizeRenderer(); applyCss(); }
+    }, 150);
+  }
 
-        // Update student stats dynamically
-        const totalStudents = document.getElementById('totalStudents');
-        const activeStudents = document.getElementById('activeStudents');
-        const certifiedStudents = document.getElementById('certifiedStudents');
-        const completionRate = document.getElementById('completionRate');
-        
-        if (totalStudents) {
-            let studentCount = 54;
-            setInterval(() => {
-                studentCount += Math.floor(Math.random() * 2);
-                if (studentCount > 60) studentCount = 54;
-                totalStudents.textContent = studentCount;
-                activeStudents.textContent = studentCount;
-            }, 15000);
-        }
-        
-        if (certifiedStudents) {
-            let certifiedCount = 54;
-            setInterval(() => {
-                certifiedCount += 1;
-                if (certifiedCount > 60) certifiedCount = 54;
-                certifiedStudents.textContent = certifiedCount;
-                if (completionRate) {
-                    completionRate.textContent = '100%';
-                }
-            }, 20000);
-        }
+  /* ---------- per-frame updates ---------- */
+  function setO(el, o) { el.style.opacity = o; el.style.visibility = o < .02 ? 'hidden' : 'visible'; }
 
-        // ===== LIGHTBOX FUNCTIONALITY =====
-        const overlay = document.getElementById('lightboxOverlay');
-        const lightboxImg = document.getElementById('lightboxImage');
+  function updatePageTurn(dt) {
+    const idle = performance.now() - st.lastEvt > 380;
+    st.pos = clamp(scrollY / stepPx, 0, FLIPS);                       // scroll progress = page progress
+    const goal = idle ? Math.round(st.pos) : st.pos;                  // settle on a page when scrolling stops
+    st.vpos += (goal - st.vpos) * (1 - Math.exp(-(reduce ? 14 : idle ? 3.4 : 6.5) * dt));
+    sheets.forEach((s, i) => { const raw = i < FLIPS ? clamp(st.vpos - i, 0, 1) : 0; s.nf = reduce ? Math.round(raw) : ease(raw); });
+    sheets.forEach((s, i) => {
+      const f = s.nf;
+      if (Math.abs(f - s.f) > .0004) {
+        const z = (f < .5 ? N - i : i + 1) * ZS;
+        if (gl) { bendSheet(s, f); s.pv.rotation.y = -f * Math.PI; s.pv.position.z = z; }
+        s.el.style.transform = 'translateZ(' + ((z + .03) * ppu).toFixed(2) + 'px) rotateY(' + (-f * 180).toFixed(2) + 'deg)';
+        s.f = f;
+      }
+    });
+    // only the page being revealed / the page on top shows its text, like real stacked paper
+    sheets.forEach((s, i) => {
+      const fo = i === 0 ? 1 : clamp((sheets[i - 1].f - .1) / .5, 0, 1);
+      const bo = i < N - 1 ? 1 - clamp((sheets[i + 1].f - .35) / .2, 0, 1) : 1;
+      if (Math.abs(fo - s.fo) > .01) { s.fo = fo; setO(s.ff, fo); }
+      if (Math.abs(bo - s.bo) > .01) { s.bo = bo; setO(s.bf, bo); }
+    });
+    if (leftEl) { const o = 1 - clamp((sheets[0].f - .35) / .2, 0, 1); if (Math.abs(o - leftEl.o) > .01) { leftEl.o = o; setO(leftEl, o); } }
+    // page indicator + dots
+    const idx = Math.round(st.vpos), label = String(portrait ? idx + 1 : idx + 1).padStart(2, '0');
+    if (label !== st.cur) { st.cur = label; curEl.textContent = label; }
+    const dIdx = portrait ? idx >> 1 : idx;
+    if (dIdx !== st.dot) { st.dot = dIdx; rail.querySelectorAll('.dot').forEach((d, k) => d.classList.toggle('on', k === dIdx)); }
+  }
 
-        function openLightbox(src) {
-            if (!src) return;
-            lightboxImg.src = src;
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+  function updateBookPhysics(dt, time) {
+    const lim = { rz: .03, rx: .04, py: .25, pz: .35 };
+    for (const k in K) { const c = K[k]; if (reduce) { c.x = c.v = 0; continue; } c.v += (-SPR_K * c.x - SPR_C * c.v) * dt; c.x = clamp(c.x + c.v * dt, -lim[k], lim[k]); }
+    const p = st.vpos, m = portrait ? .4 : 1;
+    const ry = Math.sin(p * 1.1) * .05 * m + (reduce ? 0 : Math.sin(time * .0004) * .008);
+    const rx = -.03 + Math.cos(p * .8) * .02 * m + K.rx.x, rz = Math.sin(p * .6) * .01 + K.rz.x, sc = fit * (1 + (reduce ? 0 : .025 * Math.sin(p * .7)));
+    const x = baseX, y = K.py.x, z = K.pz.x;
+    if (gl) { book.rotation.set(rx, ry, rz); book.position.set(x, y, z); book.scale.setScalar(sc); gold.position.y = 4 - (st.vpos / Math.max(1, FLIPS)) * 8; cyan.position.y = -3 + (st.vpos / Math.max(1, FLIPS)) * 6; }
+    // same transform for the HTML layer (CSS y axis points down, so x/z rotations flip sign)
+    b3d.style.transform = 'translate3d(' + (x * ppu).toFixed(2) + 'px,' + (-y * ppu).toFixed(2) + 'px,' + (z * ppu).toFixed(2) + 'px) rotateX(' + (-rx).toFixed(4) + 'rad) rotateY(' + ry.toFixed(4) + 'rad) rotateZ(' + (-rz).toFixed(4) + 'rad) scale(' + sc.toFixed(4) + ')';
+  }
 
-        function closeLightbox() {
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+  let last = performance.now();
+  function animate(t) {
+    requestAnimationFrame(animate);
+    const dt = Math.min(.033, (t - last) / 1000 || .016); last = t;
+    updatePageTurn(dt); updateBookPhysics(dt, t);
+    if (gl) R.render(S, C);
+  }
 
-        // Close with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-
-        // ===== AI ASSISTANT CHAT SYSTEM =====
-        const aiFloatBtn = document.getElementById('aiFloatBtn');
-        const aiChatWindow = document.getElementById('aiChatWindow');
-        const aiChatClose = document.getElementById('aiChatClose');
-        const aiChatMessages = document.getElementById('aiChatMessages');
-        const aiChatInput = document.getElementById('aiChatInput');
-
-        const aiResponses = {
-            'what is imena learn': "iMENA Learn is a 4-week digital skills training program for future teachers in Rwanda. We teach AI, Canva, Google Classroom, and practical digital skills — all using just a smartphone! 🎓",
-            'how do i join': "To join iMENA Learn, simply fill out the registration form on this website. Click the 'Register Now' button or scroll down to the registration section. Once you register, we'll contact you via WhatsApp with all the details! 📱",
-            'what will i learn': "You'll learn: AI tools for teaching, Google Workspace (Classroom, Drive, Forms), Canva design, InShot video editing, digital safety, presentation skills, and much more. Everything you need to be a digital teacher! 🚀",
-            'tell me about ai': "AI (Artificial Intelligence) is technology that helps computers think, learn, and solve problems. In teaching, AI can help you create lesson plans, generate quizzes, make presentations, and save time. We teach practical AI tools like ChatGPT, Gemini, Gamma, and Canva AI. 🤖",
-            'who is the trainer': "The trainer is TUYISENGE Jean Chrisostom. He is a student teacher at TTC Muhanga studying Language Education and a full-stack developer. He founded iMENA Hub to help future teachers grow through technology. 👨‍🏫",
-            'is it free': "iMENA Learn is affordable with flexible payment options. Contact us on WhatsApp +250 796 717 230 for details about fees and installment plans. 💰",
-            'do i need a computer': "No! A smartphone is enough. All the tools we teach work perfectly on phones. We'll show you how to use your phone as a teaching power. 📱",
-            'certificate': "Yes! Upon completion, you receive a verified iMENA Learn certificate with a unique ID and QR code. Anyone can scan the QR code to verify your certificate online. 🎓",
-            'whatsapp': "You can reach us on WhatsApp at +250 796 717 230. We communicate with all students through WhatsApp for classes and announcements. 💬",
-            'google classroom': "Google Classroom is a free platform where teachers share materials, assignments, and communicate with students. You'll learn how to use it in Week 3 of the program. 📚",
-            'canva': "Canva is a free design tool that helps you create posters, presentations, worksheets, certificates, and more. No design experience needed! 🎨",
-            'inshot': "InShot is a video and photo editing app for phones. You'll learn to edit videos, add text, trim clips, and create teaching content. 🎬",
-            'chatgpt': "ChatGPT is an AI tool that can help you write lesson plans, create quizzes, explain topics, and generate ideas for teaching. It's like having a teaching assistant! 🤖",
-            'gamma': "Gamma is an AI tool that creates professional presentations from a simple prompt. Just type your topic and Gamma generates beautiful slides for you. ⚡",
-            'hello': "Hello! 👋 I'm the iMENA Learn AI Assistant. I'm here to help you with any questions about the program, digital skills, or teaching with technology. What would you like to know?",
-            'hi': "Hi there! 👋 Welcome to iMENA Learn. How can I assist you today? Feel free to ask me anything about the program or digital skills!",
-            'help': "I can help you with: Program information, Digital skills guidance, AI and tech questions, Teaching with technology, Google Workspace, Canva, InShot, and more. Just ask! 😊",
-            'default': "That's a great question! I'm still learning, but I can help you with information about iMENA Learn, digital skills, AI, Google Workspace, Canva, InShot, and teaching with technology. Could you rephrase your question? 🤔"
-        };
-
-        function getAIResponse(input) {
-            const lowerInput = input.toLowerCase();
-            for (const [key, response] of Object.entries(aiResponses)) {
-                if (lowerInput.includes(key)) {
-                    return response;
-                }
-            }
-            return aiResponses['default'];
-        }
-
-        function addMessage(text, sender) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `ai-msg ${sender === 'user' ? 'ai-msg-user' : 'ai-msg-bot'}`;
-            msgDiv.innerHTML = text.replace(/\n/g, '<br>');
-            aiChatMessages.appendChild(msgDiv);
-            aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
-        }
-
-        function addTypingIndicator() {
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'ai-msg ai-msg-typing';
-            typingDiv.id = 'typingIndicator';
-            typingDiv.innerHTML = '<span></span><span></span><span></span>';
-            aiChatMessages.appendChild(typingDiv);
-            aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
-        }
-
-        function removeTypingIndicator() {
-            const typing = document.getElementById('typingIndicator');
-            if (typing) typing.remove();
-        }
-
-        function sendMessage() {
-            const input = aiChatInput.value.trim();
-            if (!input) return;
-
-            addMessage(input, 'user');
-            aiChatInput.value = '';
-
-            addTypingIndicator();
-
-            setTimeout(() => {
-                removeTypingIndicator();
-                const response = getAIResponse(input);
-                addMessage(response, 'bot');
-            }, 800 + Math.random() * 600);
-        }
-
-        function sendSuggestion(text) {
-            aiChatInput.value = text;
-            sendMessage();
-        }
-
-        aiFloatBtn.addEventListener('click', () => {
-            aiChatWindow.classList.toggle('open');
-        });
-
-        aiChatClose.addEventListener('click', () => {
-            aiChatWindow.classList.remove('open');
-        });
-
-        aiChatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!aiChatWindow.contains(e.target) && !aiFloatBtn.contains(e.target)) {
-                aiChatWindow.classList.remove('open');
-            }
-        });
-
-        console.log('✅ iMENA Learn website is ready!');
-        console.log('📊 Live Stats: 54 graduates, 100% completion rate');
-        console.log('🌍 Part of the iMENA Hub Ecosystem');
-        console.log('🤖 AI Assistant is online and ready to help!');
-        console.log('📸 Gallery images loaded from PostImages in LARGE format');
-    </script>
-
+  /* ---------- boot ---------- */
+  try { initBook(); } catch (err) { gl = false; document.documentElement.classList.add('nogl'); cv.style.display = 'none'; }
+  rebuild();
+  $('#enroll').addEventListener('click', e => { e.preventDefault(); goTo(FLIPS - (portrait ? 1 : 0)); });
+  document.querySelector('.brand').addEventListener('click', e => { e.preventDefault(); goTo(0); });
+  addEventListener('scroll', handleScroll, { passive: true });
+  addEventListener('resize', handleResize);
+  requestAnimationFrame(animate);
+})();
+</script>
 </body>
 </html>
